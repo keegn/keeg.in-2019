@@ -1,10 +1,10 @@
-import React from "react"
+import React from 'react'
 
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from 'gatsby'
 
-import Header from "./header"
+import Header from './header'
 
-import GlobalStyles from "../styles/GlobalStyles"
+import GlobalStyles from '../styles/GlobalStyles'
 
 const Layout = ({ children }: LayoutProps) => {
   const data = useStaticQuery(graphql`

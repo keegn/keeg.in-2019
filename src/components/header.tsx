@@ -1,7 +1,7 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react'
+import { Link } from 'gatsby'
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle }: HeaderProps) => (
   <header
     style={{
       background: `rebeccapurple`,
@@ -29,5 +29,9 @@ const Header = ({ siteTitle }) => (
     </div>
   </header>
 )
+
+interface HeaderProps {
+  siteTitle: React.ReactNode
+}
 
 export default Header
