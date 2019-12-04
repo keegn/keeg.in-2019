@@ -8,14 +8,23 @@ import SEO from '../components/seo'
 const SecondPage = () => (
   <Layout>
     <SEO title="Page two" />
-    <StyledH1>Hi from the second page</StyledH1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
+    <HeaderContainer>
+      <Header>Burkett Keegan</Header>
+
+      <Link to="/">Go to page 1</Link>
+    </HeaderContainer>
   </Layout>
 )
 
 export default SecondPage
 
-const StyledH1 = styled.h1`
-  color: blue;
+const HeaderContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+`
+const Header = styled.h1`
+  color: purple;
 `
