@@ -10,7 +10,6 @@ const SecondPage = () => (
     <SEO title="Page two" />
     <HeaderContainer>
       <Header>Burkett Keegan</Header>
-
       <Link to="/">Go to page 1</Link>
     </HeaderContainer>
   </Layout>
