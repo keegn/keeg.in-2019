@@ -25,7 +25,7 @@ const HeaderContainer = styled.div`
   flex-direction: column;
 `
 const Header = styled.h1`
-  color: purple;
+  color: orange;
 `
 
 export default IndexPage

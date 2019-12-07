@@ -1,4 +1,5 @@
 import React from 'react'
+import Sidebar from './sidebar'
 
 import { useStaticQuery, graphql } from 'gatsby'
 
@@ -19,6 +20,7 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <>
+      <Sidebar href="/" />
       <GlobalStyles />
       {children}
     </>
