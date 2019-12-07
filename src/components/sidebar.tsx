@@ -46,12 +46,13 @@ const StyledSidebar = styled.div`
 const Name = styled.span`
   text-decoration: none;
   border-bottom: 0;
-  color: #333;
+  color: #444;
   padding: 0px 24px 0px 0px;
 `
 // color: ${props => props.theme.colors.primary};
 const About = styled.span`
   color: #999;
+  font-weight: 300;
 `
 
 const Avatar = styled.span`
