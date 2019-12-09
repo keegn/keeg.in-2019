@@ -7,6 +7,9 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 import GlobalStyles from '../styles/GlobalStyles'
 
+// alternative:
+// const Layout: React.FC<LayoutProps> = ({children}) => {}
+
 const Layout = ({ children }: LayoutProps) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
