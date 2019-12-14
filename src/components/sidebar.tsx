@@ -25,9 +25,9 @@ export default Sidebar
 // background-color: ${props => props.theme.colors.secondary};
 const StyledSidebar = styled.div`
   width: 100vh;
-  height: 4rem;
+  height: 5rem;
   position: fixed;
-  top: -4rem;
+  top: -5rem;
   left: 0;
   z-index: 11;
   background-color: white;
