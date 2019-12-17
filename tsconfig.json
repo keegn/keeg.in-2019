@@ -1,19 +1,19 @@
 {
   "include": ["./src/**/*"],
   "compilerOptions": {
-    "target": "esnext",
+    "target": "ESNext",
     "module": "commonjs",
-    "lib": ["dom", "es2017"],
-    // "allowJs": true,
-    // "checkJs": true,
+    "lib": ["dom", "ESNext"],
     "jsx": "react",
     "strict": true,
+    "isolatedModules": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "noEmit": true,
     "skipLibCheck": true
-  }
+  },
+  "exclude": ["node_modules", "public", ".cache"]
 }
 
 // https://dev.to/speshov/how-to-setup-gatsbyjs-starter-with-typescript-eslint-prettier-4jh3
