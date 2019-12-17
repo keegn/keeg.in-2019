@@ -71,7 +71,6 @@
   "lint-staged": {
     "{gatsby-*.js,src/**/*.{js,jsx,json,css}}": [
       "yarn format",
-      "prettier --write",
       "git add"
     ]
   }
