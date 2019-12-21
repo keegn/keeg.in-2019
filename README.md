@@ -12,5 +12,5 @@
 </h4>
 <hr />
 <h4 align="center">
-  🏗 Under Construction 🏗
+  🏗 Under Construction
 </h4>
