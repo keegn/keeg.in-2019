@@ -9,7 +9,7 @@ interface Props {
 const Sidebar: React.FC<Props> = ({ href }) => (
   <StyledSidebar>
     <Link to={href}>
-      <Name>keegan</Name>
+      <Name>Keegan</Name>
     </Link>
     <About>Columbia, MO based Front End Engineer currently @Paytient</About>
     <Avatar>
