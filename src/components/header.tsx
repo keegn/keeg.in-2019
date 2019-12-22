@@ -1,10 +1,14 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
+interface HeaderProps {
+  siteTitle: React.ReactNode
+}
+
 const Header = ({ siteTitle }: HeaderProps) => (
   <header
     style={{
-      background: `rebeccapurple`,
+      background: `black`,
       marginBottom: `1.45rem`,
     }}
   >
@@ -29,9 +33,5 @@ const Header = ({ siteTitle }: HeaderProps) => (
     </div>
   </header>
 )
-
-interface HeaderProps {
-  siteTitle: React.ReactNode
-}
 
 export default Header
