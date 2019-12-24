@@ -30,7 +30,7 @@ const StyledSidebar = styled.div`
   top: -5rem;
   left: 0;
   z-index: 11;
-  background-color: white;
+  background-color: ${props => props.theme.global.sidebarBg};
   align-items: center;
   transform: rotateZ(90deg);
   transform-origin: bottom left;

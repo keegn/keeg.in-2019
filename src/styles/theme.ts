@@ -14,6 +14,7 @@ export interface Theme extends DefaultTheme {
     linkHover: string
     inlineBgColor: string
     hr?: string
+    sidebarBg: string
   }
   code: {
     highlightCodeLineBg: string
@@ -79,6 +80,7 @@ export const dark: Theme = {
     inlineBgColor: ColorPalette.lightGrey,
     link: palette.dark.mainBrand,
     linkHover: palette.dark.lightAccent,
+    sidebarBg: 'white',
   },
 }
 
@@ -90,6 +92,7 @@ export const light: Theme = {
     inlineBgColor: ColorPalette.lightYellow,
     link: palette.light.mainBrand,
     linkHover: palette.light.darkAccent,
+    sidebarBg: 'red',
   },
 }
 
