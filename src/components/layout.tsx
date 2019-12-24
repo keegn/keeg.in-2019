@@ -1,32 +1,39 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Sidebar from './sidebar'
-import { useStaticQuery, graphql } from 'gatsby'
 // import Header from './header'
-import GlobalStyles from '../styles/GlobalStyles'
+import { GlobalStyle } from '../styles/theme'
+import { ThemeProvider } from 'styled-components'
+import { dark, light } from '../styles/theme'
 
 interface LayoutProps {
   children: React.ReactNode
 }
 
-// alternative:
-// const Layout: React.FC<LayoutProps> = ({children}) => {}
+const Layout: React.FC<LayoutProps> = ({ children }) => {
+  const [lightTheme, setLightTheme] = useState(true)
 
-const Layout = ({ children }: LayoutProps) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
+  useEffect(() => {
+    const localStorageLayout = localStorage.getItem('lightTheme')
+    if (localStorageLayout) {
+      setLightTheme(JSON.parse(localStorageLayout))
     }
-  `)
+  }, [])
+
+  const changeTheme = () => {
+    setLightTheme(!lightTheme)
+    localStorage.setItem('lightTheme', !lightTheme)
+  }
+
+  console.log(lightTheme)
 
   return (
     <>
-      <Sidebar href="/" />
-      <GlobalStyles />
-      {children}
+      <ThemeProvider theme={lightTheme ? light : dark}>
+        <Sidebar href="/" />
+        <GlobalStyle />
+        <button onClick={changeTheme}>toggle theme</button>
+        {children}
+      </ThemeProvider>
     </>
   )
 }

@@ -24,19 +24,19 @@ export interface Theme extends DefaultTheme {
 }
 
 enum ColorPalette {
-  lightShades = "245, 242, 232",
-  lightAccent = "109, 214, 243",
-  mainBrand = "92, 193, 192",
-  darkAccent = "172, 126, 152",
-  darkShades = "36, 57, 79",
+  lightShades = '245, 242, 232',
+  lightAccent = '109, 214, 243',
+  mainBrand = '92, 193, 192',
+  darkAccent = '172, 126, 152',
+  darkShades = '36, 57, 79',
 
-  lightYellow = "255,229,100",
-  darkYellow = "#FFDE6B",
-  lightGrey = "#575D61",
+  lightYellow = '255,229,100',
+  darkYellow = '#FFDE6B',
+  lightGrey = '#575D61',
 
-  success = "95, 153, 81",
-  warning = "221, 136, 25",
-  error = "244, 67, 54",
+  success = '95, 153, 81',
+  warning = '221, 136, 25',
+  error = '244, 67, 54',
 }
 
 export interface Palette {
@@ -70,26 +70,26 @@ const baseTheme = {
   palette,
 }
 
-export const darkTheme: Theme = {
+export const dark: Theme = {
   ...baseTheme,
   global: {
-    bg: palette.darkShades,
-    color: palette.lightShades,
+    bg: palette.dark.darkShades,
+    color: palette.dark.lightShades,
     hr: ColorPalette.lightGrey,
     inlineBgColor: ColorPalette.lightGrey,
-    link: palette.mainBrand,
-    linkHover: palette.lightAccent,
+    link: palette.dark.mainBrand,
+    linkHover: palette.dark.lightAccent,
   },
 }
 
-export const lightTheme: Theme = {
+export const light: Theme = {
   ...baseTheme,
   global: {
-    bg: palette.lightShades,
-    color: palette.darkShades,
+    bg: palette.light.lightShades,
+    color: palette.light.darkShades,
     inlineBgColor: ColorPalette.lightYellow,
-    link: palette.mainBrand,
-    linkHover: palette.darkAccent,
+    link: palette.light.mainBrand,
+    linkHover: palette.light.darkAccent,
   },
 }
 
@@ -103,10 +103,6 @@ ${normalize};
   
   a {
     color: rgb(${props => props.theme.global.link});
-  }
-  
-  hr {
-   background-color: ${props => props.theme.isDark && props.theme.global.hr};
   }
   
   a:hover {
