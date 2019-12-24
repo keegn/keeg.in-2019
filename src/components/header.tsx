@@ -1,10 +1,15 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import ToggleTheme from './toggleTheme'
 
-const Header = ({ siteTitle }: HeaderProps) => (
+interface HeaderProps {
+  changeTheme: () => void
+  lightTheme: boolean
+}
+
+const Header: React.FC<HeaderProps> = ({ changeTheme, lightTheme }) => (
   <header
     style={{
-      background: `rebeccapurple`,
+      background: `black`,
       marginBottom: `1.45rem`,
     }}
   >
@@ -16,22 +21,10 @@ const Header = ({ siteTitle }: HeaderProps) => (
       }}
     >
       <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
+        <ToggleTheme changeTheme={changeTheme} lightTheme={lightTheme} />
       </h1>
     </div>
   </header>
 )
-
-interface HeaderProps {
-  siteTitle: React.ReactNode
-}
 
 export default Header

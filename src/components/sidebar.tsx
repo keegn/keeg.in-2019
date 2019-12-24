@@ -2,14 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
-interface Props {
+interface SidebarProps {
   href: string
 }
 
-const Sidebar: React.FC<Props> = ({ href }) => (
+const Sidebar: React.FC<SidebarProps> = ({ href }) => (
   <StyledSidebar>
     <Link to={href}>
-      <Name>keegan</Name>
+      <Name>Keegan</Name>
     </Link>
     <About>Columbia, MO based Front End Engineer currently @Paytient</About>
     <Avatar>
@@ -30,7 +30,7 @@ const StyledSidebar = styled.div`
   top: -5rem;
   left: 0;
   z-index: 11;
-  background-color: white;
+  background-color: ${props => props.theme.global.sidebarBg};
   align-items: center;
   transform: rotateZ(90deg);
   transform-origin: bottom left;
