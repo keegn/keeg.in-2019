@@ -1,11 +1,11 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
 interface HeaderProps {
-  siteTitle: React.ReactNode
+  changeTheme: () => void
+  lightTheme: boolean
 }
 
-const Header = ({ siteTitle }: HeaderProps) => (
+const Header = ({ changeTheme, lightTheme }: HeaderProps) => (
   <header
     style={{
       background: `black`,
@@ -20,15 +20,11 @@ const Header = ({ siteTitle }: HeaderProps) => (
       }}
     >
       <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
+        {lightTheme ? (
+          <button onClick={changeTheme}>switch to dark</button>
+        ) : (
+          <button onClick={changeTheme}>switch to light</button>
+        )}
       </h1>
     </div>
   </header>

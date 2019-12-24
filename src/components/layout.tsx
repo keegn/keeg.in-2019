@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Sidebar from './sidebar'
-// import Header from './header'
+import Header from './header'
 import { GlobalStyle } from '../styles/theme'
 import { ThemeProvider } from 'styled-components'
 import { dark, light } from '../styles/theme'
@@ -31,7 +31,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <ThemeProvider theme={lightTheme ? light : dark}>
         <Sidebar href="/" />
         <GlobalStyle />
-        <button onClick={changeTheme}>toggle theme</button>
+        <Header changeTheme={changeTheme} lightTheme={lightTheme} />
         {children}
       </ThemeProvider>
     </>
