@@ -2,12 +2,11 @@ import React from 'react'
 import DarkMode from './DarkMode/darkMode'
 // import ToggleTheme from './toggleTheme'
 
-interface HeaderProps {}
-
-const Header: React.FC<HeaderProps> = props => (
+const Header: React.FC = () => (
   <header
     style={{
-      background: `${props => props.theme.background}`,
+      background: `${(props: { theme: { background: string } }) =>
+        props.theme.background}`,
       display: 'flex',
       justifyContent: 'center',
     }}

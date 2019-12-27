@@ -34,7 +34,7 @@ export const lightTheme = {
   textColor: `black`,
   accentBackground: theme.lightestGray,
 
-  links: theme.blue,
+  links: theme.green,
   hoveredLinks: theme.orange,
 
   shadowColor: theme.lighterGray,
@@ -73,5 +73,5 @@ export const darkTheme = {
   inlineCodeColor: theme.darkGray,
 }
 
-export default darkMode =>
+export default (darkMode: any) =>
   darkMode ? { ...theme, ...darkTheme } : { ...theme, ...lightTheme }

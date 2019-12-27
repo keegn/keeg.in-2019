@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 
+// TODO creat a default theme declaration
+
 export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;

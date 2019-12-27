@@ -58,4 +58,5 @@ const About = styled.span`
 const Avatar = styled.span`
   margin-left: auto;
   transform: rotateZ(-90deg);
+  z-index: 100;
 `
