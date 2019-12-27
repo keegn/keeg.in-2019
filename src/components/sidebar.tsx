@@ -30,7 +30,7 @@ const StyledSidebar = styled.div`
   top: -5rem;
   left: 0;
   z-index: 11;
-  background-color: ${props => props.theme.global.sidebarBg};
+  background-color: ${props => props.theme.background};
   align-items: center;
   transform: rotateZ(90deg);
   transform-origin: bottom left;
@@ -58,4 +58,5 @@ const About = styled.span`
 const Avatar = styled.span`
   margin-left: auto;
   transform: rotateZ(-90deg);
+  z-index: 100;
 `
