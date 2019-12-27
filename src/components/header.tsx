@@ -3,10 +3,10 @@ import ToggleTheme from './toggleTheme'
 
 interface HeaderProps {
   changeTheme: () => void
-  lightTheme: boolean
+  themeMode: string
 }
 
-const Header: React.FC<HeaderProps> = ({ changeTheme, lightTheme }) => (
+const Header: React.FC<HeaderProps> = ({ changeTheme, themeMode }) => (
   <header
     style={{
       background: `black`,
@@ -21,7 +21,7 @@ const Header: React.FC<HeaderProps> = ({ changeTheme, lightTheme }) => (
       }}
     >
       <h1 style={{ margin: 0 }}>
-        <ToggleTheme changeTheme={changeTheme} lightTheme={lightTheme} />
+        <ToggleTheme changeTheme={changeTheme} themeMode={themeMode} />
       </h1>
     </div>
   </header>

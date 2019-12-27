@@ -116,5 +116,4 @@ ${normalize};
     color: inherit;
     border-left-color: inherit;
   } 
-
   `

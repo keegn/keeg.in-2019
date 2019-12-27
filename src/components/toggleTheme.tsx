@@ -2,15 +2,15 @@ import React from 'react'
 
 interface ToggleThemeProps {
   changeTheme: () => void
-  lightTheme: boolean
+  themeMode: string
 }
 
 const ToggleTheme: React.FC<ToggleThemeProps> = ({
   changeTheme,
-  lightTheme,
+  themeMode,
 }) => (
   <button onClick={changeTheme}>
-    {lightTheme ? 'Dark mode' : 'Light mode'}
+    {themeMode === 'light' ? 'Switch to Dark mode' : 'Switch to Light mode'}
   </button>
 )
 
