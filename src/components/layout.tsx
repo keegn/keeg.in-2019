@@ -5,6 +5,10 @@ import { GlobalStyle } from '../styles/theme'
 import { ThemeProvider } from 'styled-components'
 import { dark, light } from '../styles/theme'
 
+// create new branch and refactor using this
+// https://janosh.io/blog/use-dark-mode
+// then start on figma layout then code site layout
+
 interface LayoutProps {
   children: React.ReactNode
 }
