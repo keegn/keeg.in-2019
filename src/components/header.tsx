@@ -1,16 +1,15 @@
 import React from 'react'
-import ToggleTheme from './toggleTheme'
+import DarkMode from './DarkMode/darkMode'
+// import ToggleTheme from './toggleTheme'
 
-interface HeaderProps {
-  changeTheme: () => void
-  themeMode: string
-}
+interface HeaderProps {}
 
-const Header: React.FC<HeaderProps> = ({ changeTheme, themeMode }) => (
+const Header: React.FC<HeaderProps> = props => (
   <header
     style={{
-      background: `black`,
-      marginBottom: `1.45rem`,
+      background: `${props => props.theme.background}`,
+      display: 'flex',
+      justifyContent: 'center',
     }}
   >
     <div
@@ -20,9 +19,8 @@ const Header: React.FC<HeaderProps> = ({ changeTheme, themeMode }) => (
         padding: `1.45rem 1.0875rem`,
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <ToggleTheme changeTheme={changeTheme} themeMode={themeMode} />
-      </h1>
+      <h1 style={{ margin: 0 }}></h1>
+      <DarkMode initial={'light'} />
     </div>
   </header>
 )

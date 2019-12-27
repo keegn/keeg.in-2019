@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Sidebar from './sidebar'
 import Header from './header'
-import { GlobalStyle } from '../styles/theme'
+import { GlobalStyle } from '../styles/global'
 import { ThemeProvider } from 'styled-components'
-import { dark, light } from '../styles/theme'
+import { useDarkMode } from '../hooks/useDarkMode'
+import theme from '../styles/theme'
 
 // create new branch and refactor using this
 // https://janosh.io/blog/use-dark-mode
@@ -14,34 +15,13 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const [themeMode, setThemeMode] = useState('light')
-
-  useEffect(() => {
-    const localStorageLayout = localStorage.getItem('themeMode')
-    console.log('localStorageLayout ', localStorageLayout)
-    if (localStorageLayout) {
-      setThemeMode(localStorageLayout)
-    }
-  }, [])
-
-  const changeTheme = () => {
-    if (themeMode === 'light') {
-      setThemeMode('dark')
-      localStorage.setItem('themeMode', 'dark')
-    } else {
-      setThemeMode('light')
-      localStorage.setItem('themeMode', 'light')
-    }
-  }
-
-  console.log('themeMode ', themeMode)
-
+  const [darkMode] = useDarkMode()
   return (
     <>
-      <ThemeProvider theme={themeMode === 'light' ? light : dark}>
+      <ThemeProvider theme={theme(darkMode)}>
         <Sidebar href="/" />
         <GlobalStyle />
-        <Header changeTheme={changeTheme} themeMode={themeMode} />
+        <Header />
         {children}
       </ThemeProvider>
     </>
