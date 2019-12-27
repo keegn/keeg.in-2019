@@ -28,7 +28,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     if (themeMode === 'light') {
       setThemeMode('dark')
       localStorage.setItem('themeMode', 'dark')
-    } else if (themeMode === 'dark') {
+    } else {
       setThemeMode('light')
       localStorage.setItem('themeMode', 'light')
     }
