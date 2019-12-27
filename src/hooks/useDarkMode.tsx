@@ -3,7 +3,7 @@ import { useMediaQuery } from './useMediaQuery'
 
 export const useDarkMode = (initialValue = `noPreference`) => {
   const [colorMode, setColorMode] = useLocalStorage(`colorMode`, initialValue)
-  const setter = value => {
+  const setter = (value: any) => {
     // Add half-second transitions to the body's color and background
     // properties here rather than in CSS to prevent flashing from
     // light to dark on initial page load.

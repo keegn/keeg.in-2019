@@ -1,6 +1,10 @@
 import { useState } from 'react'
 
-export const useLocalStorage = (key, initialValue, options = {}) => {
+export const useLocalStorage = (
+  key: string,
+  initialValue: string,
+  options = {},
+) => {
   const { deleteKeyIfValueIs = null } = options
   // We pass useState a function that handles initial state
   // creation. That way, the function is executed only once.
@@ -23,7 +27,7 @@ export const useLocalStorage = (key, initialValue, options = {}) => {
       return item ? JSON.parse(item) : initialValue
     } else return initialValue
   })
-  const setValue = value => {
+  const setValue = (value: (arg0: any) => any) => {
     // allow value to be a function which takes the current value
     // to conform to useState API
     const valueToStore = value instanceof Function ? value(storedValue) : value
