@@ -6,7 +6,7 @@ const noop = () => {}
 export const useMediaQuery = (query: any) => {
   // Fall back on dummy matchMedia in SSR.
   // eslint-disable-next-line no-undef
-  const theGlobalThis = globalThis
+  const theGlobalThis = window
   const matchMedia =
     // eslint-disable-next-line no-undef
     theGlobalThis.matchMedia ||
