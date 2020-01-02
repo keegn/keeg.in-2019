@@ -1,6 +1,5 @@
 import { useState } from 'react'
 // resolve typescript errors
-
 export const useLocalStorage = (
   key: string,
   initialValue: string,
