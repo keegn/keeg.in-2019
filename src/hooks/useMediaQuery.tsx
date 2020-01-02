@@ -5,9 +5,11 @@ const noop = () => {}
 // React hook for JS media queries
 export const useMediaQuery = (query: any) => {
   // Fall back on dummy matchMedia in SSR.
+  // eslint-disable-next-line no-undef
+  const theGlobalThis = globalThis
   const matchMedia =
     // eslint-disable-next-line no-undef
-    globalThis.matchMedia ||
+    theGlobalThis.matchMedia ||
     (() => ({ addListener: noop, removeListener: noop }))
   query = matchMedia(query)
   const [matches, setMatches] = useState(query.matches)
