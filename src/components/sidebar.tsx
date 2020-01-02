@@ -3,12 +3,12 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 
 interface SidebarProps {
-  href: string
+  // href: string
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ href }) => (
+const Sidebar: React.FC<SidebarProps> = props => (
   <StyledSidebar>
-    <Link to={href}>
+    <Link to={props.href}>
       <Name>Keegan</Name>
     </Link>
     <About>Columbia, MO based Front End Engineer currently @Paytient</About>
