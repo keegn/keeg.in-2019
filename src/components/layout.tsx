@@ -1,5 +1,4 @@
 import React from 'react'
-import Sidebar from './sidebar'
 import Header from './header'
 import { GlobalStyle } from '../styles/global'
 import { ThemeProvider } from 'styled-components'
@@ -19,7 +18,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <ThemeProvider theme={theme(darkMode)}>
-        <Sidebar href="/" />
         <GlobalStyle />
         <Header />
         {children}
