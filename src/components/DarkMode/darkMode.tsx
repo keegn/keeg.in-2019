@@ -9,7 +9,6 @@ import {
   SunMoonIcon,
   Notification,
 } from './styles'
-import { Link } from 'gatsby'
 
 export default function DarkMode({ initial, ...rest }) {
   const [, colorMode, setColorMode] = useDarkMode(initial)

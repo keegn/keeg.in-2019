@@ -1,3 +1,4 @@
+import { Palette, palette } from './palette'
 import { DefaultTheme } from 'styled-components'
 
 export interface ThemeInterface extends DefaultTheme {
@@ -9,22 +10,6 @@ export interface ThemeInterface extends DefaultTheme {
     links: string
     hoveredLinks: string
   }
-}
-
-interface Palette {
-  lightShades: string
-  lightAccent: string
-  mainBrand: string
-  darkAccent: string
-  darkShades: string
-}
-
-const palette: Palette = {
-  lightShades: `#ffffff`,
-  lightAccent: `#eeeeee`,
-  mainBrand: `palevioletred`,
-  darkShades: `#000000`,
-  darkAccent: `#333333`,
 }
 
 export const baseTheme = {
@@ -61,5 +46,5 @@ export const darkTheme: ThemeInterface = {
   },
 }
 
-export const Theme = (darkMode: any) =>
+export const Theme = (darkMode: boolean): ThemeInterface =>
   darkMode ? { ...darkTheme } : { ...lightTheme }
