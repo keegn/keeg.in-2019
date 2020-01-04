@@ -9,18 +9,35 @@ export const GlobalStyle = createGlobalStyle<{ theme: ThemeInterface }>`
 ${normalize}
   body {
     margin: 0;
+    font-size: 20px;
     hyphens: auto;
     /* below rules enable dark mode */
     background: ${props => props.theme.global.background};
     color: ${props => props.theme.global.textColor};
-    a {
-      text-decoration: none;
-      color: ${props => props.theme.global.links};
-      :hover {
-        color: ${props => props.theme.global.hoveredLinks};
-      }
+  }
+  a {
+    text-decoration: none;
+    color: ${props => props.theme.global.links};
+    :hover {
+      color: ${props => props.theme.global.hoveredLinks};
     }
   }
+  h1, h2, h3, h4 {
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 60px;
+  }
+
+  p {
+    line-height: 1.4;
+    font-size: 20px;
+  }
+
+
+
+
 `
 
 // export const GlobalStyle = createGlobalStyle<{ theme: Theme }>`

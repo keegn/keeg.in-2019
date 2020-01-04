@@ -10,6 +10,12 @@ export interface ThemeInterface extends DefaultTheme {
     links: string
     hoveredLinks: string
   }
+  screen?: {
+    xs: string
+    sm: string
+    md: string
+    lg: string
+  }
 }
 
 export const baseTheme = {

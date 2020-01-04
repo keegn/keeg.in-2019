@@ -39,7 +39,7 @@ export default function DarkMode({ initial, ...rest }) {
               // onTouchStart needed to react on first tap in iOS Safari.
               onTouchStart={() => setColorMode(nextMode)}
             />
-            <Notification>{title}</Notification>
+            {/* <Notification>{title}</Notification> */}
           </Div>
         )
       })}

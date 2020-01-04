@@ -10,26 +10,27 @@ export const Box = styled.div`
     display: flex;
     grid-area: 1/1;
   }
+  padding: 0 8px 0 8px;
 `
 
 // Needed as a selector in Notification below.
 export const Div = styled(animated.div)``
 
-export const Notification = styled.div`
-  position: absolute;
-  top: calc(100% + 1em);
-  width: max-content;
-  background: rgba(0, 0, 0, 0.9);
-  padding: 0 0.4em;
-  border-radius: 0.2em;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: 0.5s;
-  ${Div}:hover & {
-    opacity: 1;
-  }
-`
+// export const Notification = styled.div`
+//   position: absolute;
+//   top: calc(100% + 1em);
+//   width: max-content;
+//   background: rgba(0, 0, 0, 0.9);
+//   padding: 0 0.4em;
+//   border-radius: 0.2em;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   opacity: 0;
+//   transition: 0.5s;
+//   ${Div}:hover & {
+//     opacity: 1;
+//   }
+// `
 
 const SunSlashMoon = (
   props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>,

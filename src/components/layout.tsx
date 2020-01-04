@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from './header'
+import styled from 'styled-components'
 import { GlobalStyle } from '../styles/global'
 import { ThemeProvider } from 'styled-components'
 import { useDarkMode } from '../hooks/useDarkMode'
@@ -19,11 +20,19 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <>
       <ThemeProvider theme={Theme(darkMode)}>
         <GlobalStyle />
-        <Header />
-        {children}
+        <LayoutContainer>
+          <Header />
+          {children}
+        </LayoutContainer>
       </ThemeProvider>
     </>
   )
 }
 
 export default Layout
+
+const LayoutContainer = styled.div`
+  margin: 0px auto;
+  max-width: 600px;
+  padding: 0px 5% 120px;
+`
