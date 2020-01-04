@@ -3,7 +3,7 @@ import Header from './header'
 import { GlobalStyle } from '../styles/global'
 import { ThemeProvider } from 'styled-components'
 import { useDarkMode } from '../hooks/useDarkMode'
-import theme from '../styles/theme'
+import { Theme } from '../styles/theme'
 
 // create new branch and refactor using this
 // https://janosh.io/blog/use-dark-mode
@@ -17,7 +17,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [darkMode] = useDarkMode()
   return (
     <>
-      <ThemeProvider theme={theme(darkMode)}>
+      <ThemeProvider theme={Theme(darkMode)}>
         <GlobalStyle />
         <Header />
         {children}

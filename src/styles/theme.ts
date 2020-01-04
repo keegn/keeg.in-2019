@@ -1,80 +1,72 @@
-export const theme = {
-  blue: `#2202a9`,
-  darkBlue: `#190c65`,
-  darkerBlue: `#150956`,
-  darkestBlue: `#0f073b`,
-  lightBlue: `#1f59cd`,
-  lighterBlue: `#279AF1`,
-  lightestBlue: `#83aaff`,
+import { DefaultTheme } from 'styled-components'
 
-  green: `#3f7912`,
-  darkGreen: `#0c511a`,
-  lightGreen: `#00d69b`,
-  paleDarkGreen: `#104F55`,
+export interface Theme extends DefaultTheme {
+  palette: Palette
+}
 
-  yellow: `#f9ff00`,
-  darkYellow: `#d0d500`,
-  lightYellow: `#fbff6c`,
+// enum ColorPalette {
+//   lightShades = '245, 242, 232',
+//   lightAccent = '109, 214, 243',
+//   mainBrand = '92, 193, 192',
+//   darkAccent = '172, 126, 152',
+//   darkShades = '36, 57, 79',
+// }
 
-  orange: `#efbf00`,
-  darkOrange: `#ff9100`,
-  lightOrange: `#ffbe41`,
+// exmaple:
+// interface Palette {
+//   lightShades: ColorPalette | string
+//   etc
+// }
 
-  gray: `#464849`,
-  darkGray: `#3d3d3d`,
-  darkerGray: `#1a1d23`,
-  darkestGray: `#060606`,
-  lightGray: `#bcbcbc`,
-  lighterGray: `#e5e5e5`,
-  lightestGray: `#f7f7f7`,
+interface Palette {
+  lightShades: string
+  lightAccent: string
+  mainBrand: string
+  darkAccent: string
+  darkShades: string
+}
+
+const palette: Palette = {
+  lightShades: `#ffffff`,
+  lightAccent: `#eeeeee`,
+  mainBrand: `palevioletred`,
+  darkShades: `#000000`,
+  darkAccent: `#333333`,
+}
+
+export const baseTheme = {
+  palette,
+  global: {
+    fontSize: `16px`,
+  },
+  screen: {
+    xs: '575px',
+    sm: '767px',
+    md: '991px',
+    lg: '1199px',
+  },
 }
 
 export const lightTheme = {
-  background: `white`,
-  textColor: `black`,
-  accentBackground: theme.lightestGray,
+  ...baseTheme,
+  background: baseTheme.palette.lightShades,
+  textColor: baseTheme.palette.darkShades,
 
-  links: theme.green,
-  hoveredLinks: theme.orange,
-
-  shadowColor: theme.lighterGray,
-  borderColor: theme.lighterGray,
-
-  headerBg: theme.darkerBlue,
-  footerBg: theme.darkerGray,
-
-  buttonBg: theme.blue,
-  hoveredButtonBg: theme.lightBlue,
-  grayButtonBg: theme.lightestGray,
-  grayHoveredButtonBg: theme.orange,
-
-  inlineCodeColor: theme.lighterGray,
+  links: baseTheme.palette.darkShades,
+  hoveredLinks: baseTheme.palette.darkAccent,
 }
 
 export const darkTheme = {
-  background: theme.darkerGray,
-  textColor: theme.lighterGray,
-  accentBackground: theme.darkestGray,
+  ...baseTheme,
+  background: baseTheme.palette.darkShades,
+  textColor: baseTheme.palette.lightShades,
 
-  links: theme.lighterBlue,
-  hoveredLinks: theme.orange,
-
-  shadowColor: `black`,
-  borderColor: `black`,
-
-  headerBg: theme.darkestBlue,
-  footerBg: theme.darkestGray,
-
-  buttonBg: theme.darkGreen,
-  hoveredButtonBg: theme.green,
-  grayButtonBg: theme.darkGray,
-  grayHoveredButtonBg: theme.orange,
-
-  inlineCodeColor: theme.darkGray,
+  links: baseTheme.palette.lightShades,
+  hoveredLinks: baseTheme.palette.lightAccent,
 }
 
-export default (darkMode: any) =>
-  darkMode ? { ...theme, ...darkTheme } : { ...theme, ...lightTheme }
+export const Theme = (darkMode: any) =>
+  darkMode ? { ...darkTheme } : { ...lightTheme }
 
 // export interface Theme extends DefaultTheme {
 //   isDark?: boolean
