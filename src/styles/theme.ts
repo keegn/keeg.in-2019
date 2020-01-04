@@ -34,7 +34,7 @@ export const lightTheme: ThemeInterface = {
     hoveredLinks: palette.darkAccent,
   },
 }
-console.log(lightTheme)
+console.log('Light Theme: ', lightTheme)
 
 export const darkTheme: ThemeInterface = {
   ...baseTheme,
@@ -45,6 +45,7 @@ export const darkTheme: ThemeInterface = {
     hoveredLinks: palette.lightAccent,
   },
 }
+console.log('Dark Theme ', darkTheme)
 
 export const Theme = (darkMode: boolean): ThemeInterface =>
   darkMode ? { ...darkTheme } : { ...lightTheme }
