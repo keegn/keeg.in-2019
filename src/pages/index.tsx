@@ -22,7 +22,13 @@ const IndexPage = () => (
         building software you can find cruising the back roads of Missouri on my
         gravel bike.
       </P>
-      <P>Links:</P>
+      <LinksContainer>
+        <SocialLink href="https://github.com/keegn">Github</SocialLink>
+        <SocialLink href="https://dribbble.com/keegin">Dribbble</SocialLink>
+        <SocialLink href="https://linkedin.com/in/keeganburkett">
+          LinkedIn
+        </SocialLink>
+      </LinksContainer>
     </PageContainer>
   </Layout>
 )
@@ -30,9 +36,18 @@ const IndexPage = () => (
 const PageContainer = styled.main``
 
 const HeroText = styled.h1`
-  color: orange;
-  padding: 60px 0 60px 0;
+  color: ${props => props.theme.global.textColor};
+  padding: 60px 0 36px 0;
 `
 const P = styled.p``
+
+const LinksContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+const SocialLink = styled.a`
+  padding-bottom: 16px;
+`
 
 export default IndexPage

@@ -33,9 +33,9 @@ ${normalize}
   p {
     line-height: 1.4;
     font-size: 20px;
+    margin-top: 24px;
+    margin-bottom: 24px;
   }
-
-
 
 
 `

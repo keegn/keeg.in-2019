@@ -47,6 +47,7 @@ const Name = styled(Link)``
 const NavLinksContainer = styled.div`
   display: flex;
   flex-wrap: nowrap;
+  align-items: center;
 `
 
 const NavLink = styled(Link)`
