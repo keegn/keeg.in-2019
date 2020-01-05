@@ -6,12 +6,11 @@ const normalize = `
 `
 
 export const GlobalStyle = createGlobalStyle<{ theme: ThemeInterface }>`
-${normalize}
+${normalize};
   body {
     margin: 0;
     font-size: 20px;
     hyphens: auto;
-    /* below rules enable dark mode */
     background: ${props => props.theme.global.background};
     color: ${props => props.theme.global.textColor};
   }
@@ -38,31 +37,7 @@ ${normalize}
     margin-bottom: 24px;
     font-weight: 300;
   }
-
-
 `
-
-// export const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
-// ${normalize};
-//   body {
-//     background-color: rgb(${props => props.theme.global.bg});
-//     color: rgb(${props => props.theme.global.color});
-//     transition: background 0.2s ease-out;
-//   }
-
-//   a {
-//     color: rgb(${props => props.theme.global.link});
-//   }
-
-//   a:hover {
-//     color: rgb(${props => props.theme.global.linkHover});
-//   }
-
-//   blockquote {
-//     color: inherit;
-//     border-left-color: inherit;
-//   }
-//   `
 
 // const oldTheme = {
 //     // font: {

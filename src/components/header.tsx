@@ -44,7 +44,7 @@ const Line = styled.div`
 `
 const Name = styled(Link)``
 
-const NavLinksContainer = styled.div`
+const NavLinksContainer = styled.nav`
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
