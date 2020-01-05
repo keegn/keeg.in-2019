@@ -17,6 +17,7 @@ ${normalize}
   }
   a {
     text-decoration: none;
+    font-weight: 300;
     color: ${props => props.theme.global.links};
     :hover {
       color: ${props => props.theme.global.hoveredLinks};
@@ -35,6 +36,7 @@ ${normalize}
     font-size: 20px;
     margin-top: 24px;
     margin-bottom: 24px;
+    font-weight: 300;
   }
 
 

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react'
 import styled from 'styled-components'
 
@@ -35,7 +36,6 @@ const IndexPage = () => (
 const PageContainer = styled.main``
 
 const HeroText = styled.h1`
-  color: ${props => props.theme.global.textColor};
   padding: 60px 0 36px 0;
 `
 

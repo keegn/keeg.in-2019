@@ -7,7 +7,7 @@ import {
   SunIcon,
   MoonIcon,
   SunMoonIcon,
-  Notification,
+  // Notification,
 } from './styles'
 
 export default function DarkMode({ initial, ...rest }) {

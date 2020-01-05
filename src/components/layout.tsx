@@ -12,6 +12,8 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [darkMode] = useDarkMode()
+
+  // to override theme mode pass in a boolean to theme
   return (
     <>
       <ThemeProvider theme={Theme(darkMode)}>
@@ -29,6 +31,6 @@ export default Layout
 
 const LayoutContainer = styled.div`
   margin: 0px auto;
-  max-width: 600px;
-  padding: 0px 5% 120px;
+  max-width: 648px;
+  padding: 0px 24px 0 24px;
 `
