@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import styled from 'styled-components'
 
 import Layout from '../components/layout'
@@ -11,17 +10,17 @@ const IndexPage = () => (
     <SEO title="Home" />
     <PageContainer>
       <HeroText>Portfolio</HeroText>
-      <P>
+      <p>
         Hey, I'm Keegan. I'm a design-focused software engineer based in
         Columbia, MO. My current role at Paytient focuses on building consumer
         software that helps folks pay for medical expenses over time, interest
         free.
-      </P>
-      <P>
+      </p>
+      <p>
         I spend most of my day writing React/React Native apps. When I'm not
         building software you can find cruising the back roads of Missouri on my
         gravel bike.
-      </P>
+      </p>
       <LinksContainer>
         <SocialLink href="https://github.com/keegn">Github</SocialLink>
         <SocialLink href="https://dribbble.com/keegin">Dribbble</SocialLink>
@@ -39,7 +38,6 @@ const HeroText = styled.h1`
   color: ${props => props.theme.global.textColor};
   padding: 60px 0 36px 0;
 `
-const P = styled.p``
 
 const LinksContainer = styled.div`
   display: flex;

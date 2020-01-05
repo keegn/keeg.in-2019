@@ -10,7 +10,7 @@ export const Box = styled.div`
     display: flex;
     grid-area: 1/1;
   }
-  padding: 0 8px 0 8px;
+  padding: 0 10px 0 10px;
 `
 
 // Needed as a selector in Notification below.
