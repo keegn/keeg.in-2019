@@ -24,8 +24,8 @@
 
 @font-face {
   font-family: 'Inter ExtraBold';
-  src: url('Inter-ExtraBold.woff2') format('woff2'),
-    url('Inter-ExtraBold.woff') format('woff');
+  src: url('./Inter/Inter-ExtraBold.woff2') format('woff2'),
+    url('./Inter/Inter-ExtraBold.woff') format('woff');
   font-weight: 800;
   font-style: normal;
 }
@@ -59,5 +59,21 @@
   src: url('./Inter/Inter-LightBETA.woff2') format('woff2'),
     url('./Inter/Inter-LightBETA.woff') format('woff');
   font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Syne Extra';
+  src: url('./Syne/Syne-Extra.woff2') format('woff2'),
+    url('./Syne/Syne-Extra.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Syne Bold';
+  src: url('./Syne/Syne-Bold.woff2') format('woff2'),
+    url('./Syne/Syne-Bold.woff') format('woff');
+  font-weight: bold;
   font-style: normal;
 }
