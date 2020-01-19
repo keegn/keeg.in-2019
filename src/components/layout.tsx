@@ -6,6 +6,8 @@ import { ThemeProvider } from 'styled-components'
 import { useDarkMode } from '../hooks/useDarkMode'
 import { Theme } from '../styles/theme'
 
+import '../static/fonts/fonts.css'
+
 interface LayoutProps {
   children: React.ReactNode
 }
