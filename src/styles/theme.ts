@@ -16,6 +16,13 @@ export interface ThemeInterface extends DefaultTheme {
     md: string
     lg: string
   }
+  font?: {
+    headlineBold: string
+    headlineExtra: string
+    paragraph: string
+    paragraphLight: string
+    paragraphBold: string
+  }
 }
 
 export const baseTheme = {
@@ -28,6 +35,13 @@ export const baseTheme = {
     sm: '767px',
     md: '991px',
     lg: '1199px',
+  },
+  font: {
+    headlineBold: 'Syne Bold',
+    headlineExtra: 'Syne Extra',
+    paragraphLight: 'Inter Light',
+    paragraph: 'Inter Regular',
+    paragraphBold: 'Inter Bold',
   },
 }
 
