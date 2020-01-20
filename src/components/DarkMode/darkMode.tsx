@@ -7,9 +7,8 @@ import {
   SunIcon,
   MoonIcon,
   SunMoonIcon,
-  Notification,
+  // Notification,
 } from './styles'
-import { Link } from 'gatsby'
 
 export default function DarkMode({ initial, ...rest }) {
   const [, colorMode, setColorMode] = useDarkMode(initial)
@@ -40,7 +39,7 @@ export default function DarkMode({ initial, ...rest }) {
               // onTouchStart needed to react on first tap in iOS Safari.
               onTouchStart={() => setColorMode(nextMode)}
             />
-            <Notification>{title}</Notification>
+            {/* <Notification>{title}</Notification> */}
           </Div>
         )
       })}

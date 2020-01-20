@@ -1,31 +1,44 @@
 import React from 'react'
-import Sidebar from './sidebar'
-import Header from './header'
+// import Header from './header'
+import styled from 'styled-components'
 import { GlobalStyle } from '../styles/global'
 import { ThemeProvider } from 'styled-components'
-import { useDarkMode } from '../hooks/useDarkMode'
-import theme from '../styles/theme'
+// import { useDarkMode } from '../hooks/useDarkMode'
+import { Theme } from '../styles/theme'
 
-// create new branch and refactor using this
-// https://janosh.io/blog/use-dark-mode
-// then start on figma layout then code site layout
+import '../static/fonts/fonts.css'
 
 interface LayoutProps {
   children: React.ReactNode
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const [darkMode] = useDarkMode()
+  // const [darkMode] = useDarkMode()
+  // to override theme mode pass in a boolean to theme
   return (
     <>
-      <ThemeProvider theme={theme(darkMode)}>
-        <Sidebar href="/" />
+      <ThemeProvider theme={Theme(true)}>
         <GlobalStyle />
-        <Header />
-        {children}
+        <LayoutPositioning>
+          <LayoutContainer>
+            {/* <Header /> */}
+            {children}
+          </LayoutContainer>
+        </LayoutPositioning>
       </ThemeProvider>
     </>
   )
 }
 
 export default Layout
+const LayoutPositioning = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+`
+const LayoutContainer = styled.div`
+  margin: 0px auto;
+  max-width: 600px;
+  padding: 0px 24px 0 24px;
+`

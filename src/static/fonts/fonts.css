@@ -1,0 +1,79 @@
+@font-face {
+  font-family: 'Inter Medium';
+  src: url('./Inter/Inter-Medium.woff2') format('woff2'),
+    url('./Inter/Inter-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter Black';
+  src: url('./Inter/Inter-Black.woff2') format('woff2'),
+    url('./Inter/Inter-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter SemiBold';
+  src: url('./Inter/Inter-SemiBold.woff2') format('woff2'),
+    url('./Inter/Inter-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter ExtraBold';
+  src: url('./Inter/Inter-ExtraBold.woff2') format('woff2'),
+    url('./Inter/Inter-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter Bold';
+  src: url('./Inter/Inter-Bold.woff2') format('woff2'),
+    url('./Inter/Inter-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter Thin';
+  src: url('./Inter/Inter-ThinBETA.woff2') format('woff2'),
+    url('./Inter/Inter-ThinBETA.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter Regular';
+  src: url('./Inter/Inter-Regular.woff2') format('woff2'),
+    url('./Inter/Inter-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter Light';
+  src: url('./Inter/Inter-LightBETA.woff2') format('woff2'),
+    url('./Inter/Inter-LightBETA.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Syne Extra';
+  src: url('./Syne/Syne-Extra.woff2') format('woff2'),
+    url('./Syne/Syne-Extra.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Syne Bold';
+  src: url('./Syne/Syne-Bold.woff2') format('woff2'),
+    url('./Syne/Syne-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}

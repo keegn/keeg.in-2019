@@ -1,21 +1,15 @@
-export const palette = {
-  darkAccent: '71,113,90',
-  darkShades: '48,41,23',
-  lightAccent: '156,219,220',
-  lightShades: '254,252,250',
-  mainBrand: '92,149,141',
-  light: {
-    darkAccent: '71,113,90',
-    darkShades: '48,41,23',
-    lightAccent: '156,219,220',
-    lightShades: '254,252,250',
-    mainBrand: '92,149,141',
-  },
-  dark: {
-    darkAccent: '71,113,90',
-    darkShades: '48,41,23',
-    lightAccent: '156,219,220',
-    lightShades: '254,252,250',
-    mainBrand: '0,0,0',
-  },
+export interface Palette {
+  lightShades: string
+  lightAccent: string
+  mainBrand: string
+  darkAccent: string
+  darkShades: string
+}
+
+export const palette: Palette = {
+  lightShades: `#ffffff`,
+  lightAccent: `#eeeeee`,
+  mainBrand: `palevioletred`,
+  darkShades: `#000000`,
+  darkAccent: `#333333`,
 }
