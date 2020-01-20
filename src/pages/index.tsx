@@ -8,7 +8,7 @@ import SEO from '../components/seo'
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Portfolio" />
     <PageContainer>
       <HeroText>Keegan Burkett</HeroText>
       <P>
@@ -23,13 +23,13 @@ const IndexPage = () => (
       </P>
       <LinksContainer>
         <SocialLink target="blank" href="https://github.com/keegn">
-          💻 Github
+          Github
         </SocialLink>
         <SocialLink target="blank" href="https://dribbble.com/keegin">
-          💅 Dribbble
+          Dribbble
         </SocialLink>
         <SocialLink target="blank" href="https://linkedin.com/in/keeganburkett">
-          🤝 LinkedIn
+          LinkedIn
         </SocialLink>
       </LinksContainer>
     </PageContainer>
