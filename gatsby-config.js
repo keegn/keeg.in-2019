@@ -33,7 +33,7 @@ module.exports = {
         background_color: `#6b37bf`,
         theme_color: `#6b37bf`,
         display: `standalone`,
-        icon: `src/images/gatsby-icon.png`,
+        icon: `src/images/keegin-sq-icon.png`,
       },
     },
   ],
