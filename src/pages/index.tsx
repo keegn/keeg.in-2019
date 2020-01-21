@@ -117,7 +117,9 @@ const LinksContainer = styled.div`
 `
 
 const SocialLink = styled(motion.a)`
-  padding-bottom: 24px;
+  padding-bottom: 16px;
+  font-family: ${props => props.theme.font.paragraphLight};
+  color: ${props => props.theme.palette.lightAccent};
 `
 
 export default IndexPage
