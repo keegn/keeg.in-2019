@@ -39,9 +39,10 @@ const IndexPage = () => {
           }}
           animate={controls}
         >
-          Hey, I'm Keegan. I'm a front-end software engineer based in Columbia,
-          MO. My current role at Paytient focuses on building consumer software
-          that helps folks pay for medical expenses over time, interest free.
+          Hey, I'm Keegan. I'm a front-end software engineer based in the
+          Midwest. My current role at Paytient focuses on building consumer
+          software that helps folks pay for medical expenses over time, interest
+          free.
         </P>
         <P
           custom={1}
@@ -51,9 +52,9 @@ const IndexPage = () => {
           }}
           animate={controls}
         >
-          I spend most of my day writing React/React Native apps. When I'm not
-          building software you can find me cruising the back roads of Missouri
-          on my gravel bike.
+          I spend most of my day building mobile and web applications with
+          React, React Native, and TypeScript. When I'm not creating software
+          you can find me cycling roads less traveled my gravel bike.
         </P>
         <LinksContainer>
           <SocialLink
@@ -111,6 +112,7 @@ const HeroText = styled(motion.h1)`
 
 const P = styled(motion.p)`
   font-family: ${props => props.theme.font.paragraphLight};
+  hyphens: none;
 `
 
 const LinksContainer = styled.div`
