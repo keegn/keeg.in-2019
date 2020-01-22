@@ -32,45 +32,34 @@ const IndexPage = () => {
           Keegan Burkett
         </HeroText>
         <P
-          custom={0}
+          custom={1}
           initial={{
             opacity: 0,
             y: 16,
           }}
           animate={controls}
         >
-          Hey, I'm Keegan. I'm a front-end software engineer based in Columbia,
-          MO. My current role at Paytient focuses on building consumer software
-          that helps folks pay for medical expenses over time, interest free.
+          Hey, I'm Keegan. I'm a front-end software engineer based in the
+          Midwest. My current role at Paytient focuses on building consumer
+          software that helps folks pay for medical expenses over time, interest
+          free.
         </P>
         <P
-          custom={0}
+          custom={1}
           initial={{
             opacity: 0,
             y: 24,
           }}
           animate={controls}
         >
-          I spend most of my day writing React/React Native apps. When I'm not
-          building software you can find me cruising the back roads of Missouri
-          on my gravel bike.
+          I spend most of my day building mobile and web applications with
+          React, React Native, and TypeScript. When I'm not creating software
+          you can find me cycling roads less traveled on my gravel bike.
         </P>
         <LinksContainer>
           <SocialLink
             target="blank"
             href="https://github.com/keegn"
-            custom={1}
-            initial={{
-              opacity: 0,
-              y: 24,
-            }}
-            animate={controls}
-          >
-            Github
-          </SocialLink>
-          <SocialLink
-            target="blank"
-            href="https://dribbble.com/keegin"
             custom={2}
             initial={{
               opacity: 0,
@@ -78,11 +67,12 @@ const IndexPage = () => {
             }}
             animate={controls}
           >
-            Dribbble
+            <div />
+            Github
           </SocialLink>
           <SocialLink
             target="blank"
-            href="https://linkedin.com/in/keeganburkett"
+            href="https://dribbble.com/keegin"
             custom={3}
             initial={{
               opacity: 0,
@@ -90,6 +80,20 @@ const IndexPage = () => {
             }}
             animate={controls}
           >
+            <div />
+            Dribbble
+          </SocialLink>
+          <SocialLink
+            target="blank"
+            href="https://linkedin.com/in/keeganburkett"
+            custom={4}
+            initial={{
+              opacity: 0,
+              y: 24,
+            }}
+            animate={controls}
+          >
+            <div />
             LinkedIn
           </SocialLink>
         </LinksContainer>
@@ -108,6 +112,7 @@ const HeroText = styled(motion.h1)`
 
 const P = styled(motion.p)`
   font-family: ${props => props.theme.font.paragraphLight};
+  hyphens: none;
 `
 
 const LinksContainer = styled.div`
@@ -116,10 +121,30 @@ const LinksContainer = styled.div`
   flex-direction: column;
 `
 
-const SocialLink = styled(motion.a)`
+/* Alternative way to type a bunch of style props
+
+interface SocialLinkProps {
+  dotColor?: string
+}
+
+styled(motion.a)<LinkProps>
+
+*/
+
+const SocialLink = styled(motion.a)<{ dotColor?: string }>`
   padding-bottom: 16px;
   font-family: ${props => props.theme.font.paragraphLight};
   color: ${props => props.theme.palette.lightAccent};
+  display: flex;
+  align-items: center;
+  div {
+    width: ${props => props.dotColor && '8px'};
+    height: ${props => props.dotColor && '8px'};
+    border-radius: ${props => props.dotColor && '16px'};
+    background-color: ${props => props.dotColor};
+    display: inline-block;
+    margin: ${props => props.dotColor && '0 8px 0 0'};
+  }
 `
 
 export default IndexPage
