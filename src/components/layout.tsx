@@ -34,11 +34,15 @@ export default Layout
 const LayoutPositioning = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   min-height: 100vh;
+  @media (min-width: 541px) {
+    justify-content: center;
+    align-items: center;
+  }
 `
 const LayoutContainer = styled.div`
   margin: 0px auto;
-  max-width: 600px;
+  max-width: 540px;
   padding: 0px 24px 0 24px;
 `
