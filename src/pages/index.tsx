@@ -54,7 +54,7 @@ const IndexPage = () => {
         >
           I spend most of my day building mobile and web applications with
           React, React Native, and TypeScript. When I'm not creating software
-          you can find me cycling roads less traveled my gravel bike.
+          you can find me cycling roads less traveled on my gravel bike.
         </P>
         <LinksContainer>
           <SocialLink
