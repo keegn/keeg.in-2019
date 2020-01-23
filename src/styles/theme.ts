@@ -5,10 +5,10 @@ export interface ThemeInterface extends DefaultTheme {
   palette: Palette
   global: {
     fontSize?: string
-    background: string
-    textColor: string
-    links: string
-    hoveredLinks: string
+    background?: string
+    textColor?: string
+    links?: string
+    hoveredLinks?: string
   }
   screen?: {
     xs: string
@@ -25,16 +25,16 @@ export interface ThemeInterface extends DefaultTheme {
   }
 }
 
-export const baseTheme = {
+export const baseTheme: ThemeInterface = {
   palette,
   global: {
     fontSize: `16px`,
   },
   screen: {
-    xs: '575px',
-    sm: '767px',
-    md: '991px',
-    lg: '1199px',
+    xs: '576px',
+    sm: '768px',
+    md: '992px',
+    lg: '1200px',
   },
   font: {
     headlineBold: 'Syne Bold',

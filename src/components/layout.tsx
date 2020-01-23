@@ -31,12 +31,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 }
 
 export default Layout
+
 const LayoutPositioning = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-start;
   min-height: 100vh;
-  @media (min-width: 541px) {
+  @media (min-width: ${props => props.theme.screen.xs}) {
     justify-content: center;
     align-items: center;
   }
