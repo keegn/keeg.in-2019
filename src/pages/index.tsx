@@ -107,7 +107,6 @@ const PageContainer = styled.main``
 const HeroText = styled(motion.h1)`
   padding: 60px 0 8px 0;
   font-family: ${props => props.theme.font.headlineExtra};
-  font-size: 24px;
 `
 
 const P = styled(motion.p)`
@@ -121,16 +120,12 @@ const LinksContainer = styled.div`
   flex-direction: column;
 `
 
-/* Alternative way to type a bunch of style props
-
+/* Alternative way to type a bunch of styled props
 interface SocialLinkProps {
   dotColor?: string
 }
-
 styled(motion.a)<LinkProps>
-
 */
-
 const SocialLink = styled(motion.a)<{ dotColor?: string }>`
   padding-bottom: 16px;
   font-family: ${props => props.theme.font.paragraphLight};
