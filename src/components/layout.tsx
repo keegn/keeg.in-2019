@@ -1,5 +1,4 @@
 import React from 'react'
-// import Header from './header'
 import styled from 'styled-components'
 import { GlobalStyle } from '../styles/global'
 import { ThemeProvider } from 'styled-components'
@@ -20,10 +19,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <ThemeProvider theme={Theme(true)}>
         <GlobalStyle />
         <LayoutPositioning>
-          <LayoutContainer>
-            {/* <Header /> */}
-            {children}
-          </LayoutContainer>
+          <LayoutContainer>{children}</LayoutContainer>
         </LayoutPositioning>
       </ThemeProvider>
     </>
