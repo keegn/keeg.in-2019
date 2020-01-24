@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { motion, useAnimation } from 'framer-motion'
 import { Link } from 'gatsby'
@@ -33,48 +33,44 @@ const NotFoundPage = () => {
   return (
     <Layout>
       <SEO title="404: Not found" />
-      <PageContainer>
-        <StyledImage fluid={data.file.childImageSharp.fluid} />
-        <HeroText
-          custom={0}
-          initial={{
-            opacity: 0,
-            y: 16,
-          }}
-          animate={controls}
-        >
-          Page Not Found
-        </HeroText>
-        <P
-          custom={0}
-          initial={{
-            opacity: 0,
-            y: 16,
-          }}
-          animate={controls}
-        >
-          Oops! The page you are looking for has been removed or relocated.
-        </P>
-        <MotionLink
-          to="/"
-          custom={0}
-          initial={{
-            opacity: 0,
-            y: 16,
-          }}
-          animate={controls}
-        >
-          <ArrowLeft size={20} />
-          back to home
-        </MotionLink>
-      </PageContainer>
+      <StyledImage fluid={data.file.childImageSharp.fluid} />
+      <HeroText
+        custom={0}
+        initial={{
+          opacity: 0,
+          y: 16,
+        }}
+        animate={controls}
+      >
+        Page Not Found
+      </HeroText>
+      <P
+        custom={0}
+        initial={{
+          opacity: 0,
+          y: 16,
+        }}
+        animate={controls}
+      >
+        Oops! The page you are looking for has been removed or relocated.
+      </P>
+      <MotionLink
+        to="/"
+        custom={0}
+        initial={{
+          opacity: 0,
+          y: 16,
+        }}
+        animate={controls}
+      >
+        <ArrowLeft size={20} />
+        back to home
+      </MotionLink>
     </Layout>
   )
 }
 
 export default NotFoundPage
-
-const PageContainer = styled.main``
 
 const StyledImage = styled(Img)`
   margin-top: 24px;
