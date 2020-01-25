@@ -40,7 +40,7 @@ const HeaderContainer = styled.div`
 
 const Line = styled.div`
   height: 1px;
-  background: 'black';
+  background: ${props => props.theme.global.lineColor};
 `
 const Name = styled(Link)``
 

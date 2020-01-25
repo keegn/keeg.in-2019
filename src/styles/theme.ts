@@ -9,6 +9,7 @@ export interface ThemeInterface extends DefaultTheme {
     textColor?: string
     links?: string
     hoveredLinks?: string
+    lineColor?: string
   }
   screen?: {
     xs: string
@@ -52,6 +53,7 @@ export const lightTheme: ThemeInterface = {
     textColor: palette.darkShades,
     links: palette.darkShades,
     hoveredLinks: palette.darkAccent,
+    lineColor: palette.darkAccent,
   },
 }
 console.log('Light Theme: ', lightTheme)
@@ -63,6 +65,7 @@ export const darkTheme: ThemeInterface = {
     textColor: palette.lightShades,
     links: palette.lightShades,
     hoveredLinks: palette.lightAccent,
+    lineColor: palette.lightAccent,
   },
 }
 console.log('Dark Theme ', darkTheme)

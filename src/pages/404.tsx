@@ -73,11 +73,12 @@ const NotFoundPage = () => {
 export default NotFoundPage
 
 const StyledImage = styled(Img)`
-  margin-top: 24px;
+  margin-top: 48px;
   padding: 24px;
   width: 50px;
   @media (min-width: ${props => props.theme.screen?.xs}) {
     width: 75px;
+    margin-top: 0px;
   }
 `
 
