@@ -1,4 +1,11 @@
 /* eslint-disable  */
+const activeEnv =
+  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development'
+console.log(`Using environment config: '${activeEnv}'`)
+require('dotenv').config({
+  path: `.env.${activeEnv}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Keegan Burkett`,
@@ -12,7 +19,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: 'UA-55837701-1',
+        trackingId: process.env.GATSBY_GA_TRACKING_ID,
         head: false,
         anonymize: true,
         respectDNT: true,
