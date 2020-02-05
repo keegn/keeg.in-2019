@@ -2,7 +2,6 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { motion, useAnimation } from 'framer-motion'
-import useToggle from '../hooks/useToggle'
 
 import Layout from '../components/layout'
 
@@ -10,7 +9,6 @@ import SEO from '../components/seo'
 
 const IndexPage = () => {
   const controls = useAnimation()
-  const [on, toggle] = useToggle(false)
 
   useEffect(() => {
     controls.start(i => ({
@@ -22,8 +20,6 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Portfolio" />
-      <button onClick={toggle}></button>
-      {on && <h1>widget is shown</h1>}
       <HeroText
         custom={0}
         initial={{
