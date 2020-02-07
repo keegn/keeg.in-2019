@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 const useToggle = (defaultOnValue: boolean) => {
-  // initialize state - on or open
+  // initialize state
   const [isToggledOn, setIsToggledOn] = useState(defaultOnValue)
 
   // create any functions we need for modifying the state - toggle function
