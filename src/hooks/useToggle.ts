@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const useToggle = (defaultOnValue: boolean) => {
+const useToggle = (defaultOnValue?: boolean) => {
   // initialize state
   const [isToggledOn, setIsToggledOn] = useState(defaultOnValue)
 
