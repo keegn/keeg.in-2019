@@ -10,6 +10,8 @@ const ChatWidget: React.FC<Props> = () => {
   const [openLauncher, setOpenLauncher] = useToggle(false)
   const [openForm, setOpenForm] = useToggle(false)
 
+  const handleForm = e => e.preventDefault()
+
   return (
     <>
       <ChatLauncher onClick={setOpenLauncher}>icon</ChatLauncher>
@@ -38,11 +40,12 @@ const ChatWidget: React.FC<Props> = () => {
                         method="post"
                         data-netlify-honeypot="bot-field"
                         data-netlify="true"
+                        onSubmit={handleForm}
                       >
                         <input type="hidden" name="bot-field" />
                         <input
                           type="hidden"
-                          name="form-name"
+                          name="contact-keegan"
                           value="contact-keegan"
                         />
                         <StyledInput
