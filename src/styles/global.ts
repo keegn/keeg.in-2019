@@ -15,6 +15,7 @@ ${normalize};
     background: ${props => props.theme.global.background};
     color: ${props => props.theme.global.textColor};
   }
+
   a {
     font-size: 18px;
     text-decoration: none;
@@ -24,6 +25,7 @@ ${normalize};
       color: ${props => props.theme.global.hoveredLinks};
     }
   }
+
   h1, h2, h3, h4 {
     margin: 0;
   }
@@ -40,6 +42,53 @@ ${normalize};
     font-weight: 300;
   }
 
+input {
+  display: block;
+  width: 100%;
+  height: 2.25rem;
+  padding: 0 8px;
+  font-size: 14px;
+  font-family: ${props => props.theme.font?.paragraphLight};
+  letter-spacing: 0.0125em;
+  color: #888;
+  background-color: #f1ede8;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  outline: none;
+  margin-bottom: 16px;
+
+textarea {
+  display: block;
+  width: 100%;
+  height: 2.25rem;
+  padding: 8px;
+  font-size: 14px;
+  font-family: ${props => props.theme.font?.paragraphLight};
+  font-weight: 500;
+  letter-spacing: 0.0125em;
+  color: #888;
+  background-color: #f1ede8;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  outline: none;
+  margin-bottom: 16px;
+}
+
+button {
+  padding: 0 12px;
+  height: 2.25rem;
+  border-radius: 6px;
+  font-family: ${props => props.theme.font?.paragraphLight};
+  hyphens: none;
+  margin: 0;
+  font-size: 14px;
+  background-color: #555555;
+  border: 1px solid transparent;
+  color: white;
+}
+
   @media (min-width: ${props => props.theme.screen?.xs}) {
     h1 {
       font-size: 24px;
@@ -51,4 +100,5 @@ ${normalize};
       font-size: 20px;
     }
   }
+}
 `

@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { motion, useAnimation } from 'framer-motion'
 
 import Layout from '../components/layout'
+import ChatWidget from '../components/chatWidget'
 
 import SEO from '../components/seo'
 
@@ -20,6 +21,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Portfolio" />
+      <ChatWidget />
       <HeroText
         custom={0}
         initial={{
