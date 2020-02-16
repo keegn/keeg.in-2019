@@ -179,13 +179,12 @@ const ChatWidget: React.FC<Props> = () => {
                         <input
                           marginBottom
                           placeholder="Your Message"
-                          type="textarea"
                           name="message"
                           onChange={handleChange}
                           value={inputData.message}
                           required
                         />
-                        <button type="submit">Send Message</button>
+                        <StyledButton type="submit">Send Message</StyledButton>
                       </form>
                     )}
                   </BodyCardFooter>
