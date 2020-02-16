@@ -40,12 +40,13 @@ const ChatWidget: React.FC<Props> = () => {
                         method="post"
                         data-netlify-honeypot="bot-field"
                         data-netlify="true"
+                        action="/thanks"
                         onSubmit={handleForm}
                       >
                         <input type="hidden" name="bot-field" />
                         <input
                           type="hidden"
-                          name="contact-keegan"
+                          name="form-name"
                           value="contact-keegan"
                         />
                         <StyledInput
