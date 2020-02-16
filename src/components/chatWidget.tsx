@@ -123,17 +123,13 @@ const ChatWidget: React.FC<Props> = () => {
                       //   />
                       <ContactForm
                         onSubmit={handleSubmit}
-                        name="early-access"
+                        name="contact"
                         data-netlify-honeypot="bot-field"
                         data-netlify="true"
                         netlify
                       >
                         <input type="hidden" name="bot-field" />
-                        <input
-                          type="hidden"
-                          name="form-name"
-                          value="early-access"
-                        />
+                        <input type="hidden" name="form-name" value="contact" />
                         <StyledInput
                           marginBottom
                           type="text"
