@@ -61,25 +61,15 @@ const ChatWidget: React.FC<Props> = () => {
   const handleSubmit = e => {
     setIsLoading(true)
     e.preventDefault()
-    const form = e.target
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({
-        'form-name': form.getAttribute('name'),
+        'form-name': 'contact',
         ...inputData,
       }),
     })
       .then(res => {
-        // if (res.ok) {
-        //   alert('Success!')
-        //   setOpenForm(false)
-        //   setSuccessMessage(true)
-        // } else {
-        //   throw Error(
-        //     `Something went wrong and your message was not sent! 🤯 ${res.status} ${res.message}`,
-        //   )
-        // }
         console.log('Form response: ', res)
         setOpenForm(false)
         setSuccessMessage(true)
@@ -165,6 +155,7 @@ const ChatWidget: React.FC<Props> = () => {
                         data-netlify="true"
                         data-netlify-honeypot="bot-field"
                       >
+                        <input type="hidden" name="form-name" value="contact" />
                         <input type="hidden" name="bot-field" />
                         <StyledInput
                           marginBottom
