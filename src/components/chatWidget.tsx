@@ -121,7 +121,19 @@ const ChatWidget: React.FC<Props> = () => {
                       //     name="message"
                       //     required
                       //   />
-                      <ContactForm onSubmit={handleSubmit}>
+                      <ContactForm
+                        onSubmit={handleSubmit}
+                        name="early-access"
+                        data-netlify-honeypot="bot-field"
+                        data-netlify="true"
+                        netlify
+                      >
+                        <input type="hidden" name="bot-field" />
+                        <input
+                          type="hidden"
+                          name="form-name"
+                          value="early-access"
+                        />
                         <StyledInput
                           marginBottom
                           type="text"
