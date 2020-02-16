@@ -1,16 +1,63 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import useToggle from '../hooks/useToggle'
+
+const encode = data => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
 
 interface Props {
   onClick?: () => void
 }
 
+interface InputData {
+  name: string
+  email: string
+  message: string
+}
+
 const ChatWidget: React.FC<Props> = () => {
   const [openLauncher, setOpenLauncher] = useToggle(false)
   const [openForm, setOpenForm] = useToggle(false)
+  const [isLoading, setIsLoading] = useState(false)
+  const [inputData, setInputData] = useState<InputData>({
+    name: '',
+    email: '',
+    message: '',
+  })
+  const [successMessage, setSuccessMessage] = useState(false)
 
-  // const handleForm = e => e.preventDefault()
+  const handleChange = e => {
+    const { name, value } = e.target
+    setInputData(prevInputData => ({ ...prevInputData, [name]: value }))
+  }
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setSuccessMessage(false)
+    }, 3000)
+    return () => clearTimeout(timer)
+  }, [successMessage])
+
+  const handleSubmit = e => {
+    setIsLoading(true)
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', ...inputData }),
+    })
+      .then(() => {
+        alert('Success!')
+        setOpenForm(false)
+        setSuccessMessage(true)
+      })
+      .catch(error => alert(error))
+
+    e.preventDefault()
+  }
+  console.log(inputData)
 
   return (
     <>
@@ -31,28 +78,56 @@ const ChatWidget: React.FC<Props> = () => {
                   </BodyCardBody>
                   <BodyCardFooter>
                     {!openForm ? (
-                      <button onClick={setOpenForm}>
-                        Start a conversation
-                      </button>
+                      <>
+                        {successMessage ? (
+                          <p>Thank you for your message.</p>
+                        ) : (
+                          <button onClick={setOpenForm}>
+                            Start a conversation
+                          </button>
+                        )}
+                      </>
                     ) : (
-                      <ContactForm
-                        name="contact-keegan"
-                        method="post"
-                        data-netlify-honeypot="bot-field"
-                        data-netlify="true"
-                        action="/thanks"
-                      >
-                        <input type="hidden" name="bot-field" />
-                        <input
-                          type="hidden"
-                          name="form-name"
-                          value="contact-keegan"
-                        />
+                      // <ContactForm
+                      //   name="contact-keegan"
+                      //   method="post"
+                      //   data-netlify-honeypot="bot-field"
+                      //   data-netlify="true"
+                      //   action="/thanks"
+                      // >
+                      //   <input type="hidden" name="bot-field" />
+                      //   <input
+                      //     type="hidden"
+                      //     name="form-name"
+                      //     value="contact-keegan"
+                      //   />
+                      //   <StyledInput
+                      //     marginBottom
+                      //     type="text"
+                      //     placeholder="Your Name"
+                      //     name="name"
+                      //     required
+                      //   />
+                      //   <StyledInput
+                      //     marginBottom
+                      //     type="email"
+                      //     placeholder="Your Email"
+                      //     name="email"
+                      //     required
+                      //   />
+                      //   <StyledTextArea
+                      //     marginBottom
+                      //     placeholder="Your Message"
+                      //     name="message"
+                      //     required
+                      //   />
+                      <ContactForm onSubmit={handleSubmit}>
                         <StyledInput
                           marginBottom
                           type="text"
                           placeholder="Your Name"
                           name="name"
+                          onChange={handleChange}
                           required
                         />
                         <StyledInput
@@ -60,12 +135,14 @@ const ChatWidget: React.FC<Props> = () => {
                           type="email"
                           placeholder="Your Email"
                           name="email"
+                          onChange={handleChange}
                           required
                         />
                         <StyledTextArea
                           marginBottom
                           placeholder="Your Message"
                           name="message"
+                          onChange={handleChange}
                           required
                         />
                         <button type="submit">Send Message</button>
