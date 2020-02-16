@@ -76,6 +76,19 @@ textarea {
   margin-bottom: 16px;
 }
 
+button {
+  padding: 0 12px;
+  height: 2.25rem;
+  border-radius: 6px;
+  font-family: ${props => props.theme.font?.paragraphLight};
+  hyphens: none;
+  margin: 0;
+  font-size: 14px;
+  background-color: #555555;
+  border: 1px solid transparent;
+  color: white;
+}
+
   @media (min-width: ${props => props.theme.screen?.xs}) {
     h1 {
       font-size: 24px;

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import useToggle from '../hooks/useToggle'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
+import '../styles/hacks.css'
 
 import Avatar from './avatar'
 import { X } from 'react-feather'
@@ -115,40 +116,6 @@ const ChatWidget: React.FC<Props> = () => {
                         )}
                       </>
                     ) : (
-                      // <form
-                      //   name="contact"
-                      //   method="post"
-                      //   action="/thanks"
-                      //   data-netlify="true"
-                      //   data-netlify-honeypot="bot-field"
-                      // >
-                      //   <input type="hidden" name="bot-field" />
-                      //   <input type="hidden" name="form-name" value="contact" />
-                      //   <input
-                      //     marginBottom
-                      //     type="text"
-                      //     placeholder="Your Name"
-                      //     name="name"
-                      //     id="name"
-                      //     required
-                      //   />
-                      //   <input
-                      //     marginBottom
-                      //     type="email"
-                      //     placeholder="Your Email"
-                      //     name="email"
-                      //     id="email"
-                      //     required
-                      //   />
-                      //   <textarea
-                      //     marginBottom
-                      //     placeholder="Your Message"
-                      //     name="message"
-                      //     id="message"
-                      //     required
-                      //   />
-                      //   <button type="submit">Send Message</button>
-                      // </form>
                       <form
                         name="contact"
                         method="post"
@@ -159,7 +126,6 @@ const ChatWidget: React.FC<Props> = () => {
                         <input type="hidden" name="form-name" value="contact" />
                         <input type="hidden" name="bot-field" />
                         <input
-                          marginBottom
                           type="text"
                           placeholder="Your Name"
                           name="name"
@@ -168,7 +134,6 @@ const ChatWidget: React.FC<Props> = () => {
                           required
                         />
                         <input
-                          marginBottom
                           type="email"
                           placeholder="Your Email"
                           name="email"
@@ -177,14 +142,15 @@ const ChatWidget: React.FC<Props> = () => {
                           required
                         />
                         <input
-                          marginBottom
                           placeholder="Your Message"
                           name="message"
                           onChange={handleChange}
                           value={inputData.message}
                           required
                         />
-                        <StyledButton type="submit">Send Message</StyledButton>
+                        <button className="submit-button" type="submit">
+                          Send Message
+                        </button>
                       </form>
                     )}
                   </BodyCardFooter>
@@ -331,43 +297,6 @@ const BodyCardHeader = styled.div``
 const BodyCardBody = styled.div``
 
 const BodyCardFooter = styled.div``
-
-const ContactForm = styled.form``
-
-const StyledInput = styled.input<{ marginBottom?: boolean }>`
-  display: block;
-  width: 100%;
-  height: 2.25rem;
-  padding: 0 8px;
-  font-size: 14px;
-  font-family: ${props => props.theme.font.paragraphLight};
-  letter-spacing: 0.0125em;
-  color: #888;
-  background-color: #f1ede8;
-  border: 1px solid transparent;
-  border-radius: 6px;
-  transition: all 0.2s ease;
-  outline: none;
-  margin-bottom: ${props => props.marginBottom && '16px'};
-`
-
-const StyledTextArea = styled.textarea<{ marginBottom?: boolean }>`
-  display: block;
-  width: 100%;
-  height: 2.25rem;
-  padding: 8px;
-  font-size: 14px;
-  font-family: ${props => props.theme.font.paragraphLight};
-  font-weight: 500;
-  letter-spacing: 0.0125em;
-  color: #888;
-  background-color: #f1ede8;
-  border: 1px solid transparent;
-  border-radius: 6px;
-  transition: all 0.2s ease;
-  outline: none;
-  margin-bottom: ${props => props.marginBottom && '16px'};
-`
 
 const StyledButton = styled.button`
   padding: 0 12px;
