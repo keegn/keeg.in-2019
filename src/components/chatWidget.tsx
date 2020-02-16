@@ -71,15 +71,18 @@ const ChatWidget: React.FC<Props> = () => {
       }),
     })
       .then(res => {
-        if (res.ok) {
-          alert('Success!')
-          setOpenForm(false)
-          setSuccessMessage(true)
-        } else {
-          throw Error(
-            `Something went wrong and your message was not sent! 🤯 ${res.status} ${res.message}`,
-          )
-        }
+        // if (res.ok) {
+        //   alert('Success!')
+        //   setOpenForm(false)
+        //   setSuccessMessage(true)
+        // } else {
+        //   throw Error(
+        //     `Something went wrong and your message was not sent! 🤯 ${res.status} ${res.message}`,
+        //   )
+        // }
+        console.log('Form response: ', res)
+        setOpenForm(false)
+        setSuccessMessage(true)
       })
       .catch(error => alert(error))
 
