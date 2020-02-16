@@ -85,8 +85,6 @@ const ChatWidget: React.FC<Props> = () => {
         setSuccessMessage(true)
       })
       .catch(error => alert(error))
-
-    e.preventDefault()
   }
   console.log(inputData)
   return (
