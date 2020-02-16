@@ -97,9 +97,9 @@ const ChatWidget: React.FC<Props> = () => {
                         {successMessage ? (
                           <p>Thank you for your message.</p>
                         ) : (
-                          <button onClick={setOpenForm}>
+                          <StyledButton onClick={setOpenForm}>
                             Start a conversation
-                          </button>
+                          </StyledButton>
                         )}
                       </>
                     ) : (
@@ -164,6 +164,7 @@ const ChatWidget: React.FC<Props> = () => {
                         <StyledTextArea
                           marginBottom
                           placeholder="Your Message"
+                          type="textarea"
                           name="message"
                           onChange={handleChange}
                           value={inputData.message}
@@ -321,4 +322,15 @@ const StyledTextArea = styled.textarea<{ marginBottom?: boolean }>`
   transition: all 0.2s ease;
   outline: none;
   margin-bottom: ${props => props.marginBottom && '16px'};
+`
+
+const StyledButton = styled.button`
+  padding: 0 8px;
+  height: 2.25rem;
+  border-radius: 6px;
+  font-family: ${props => props.theme.font.paragraphLight};
+  hyphens: none;
+  margin: 0;
+  padding: 0 0 8px 0;
+  font-size: 14px;
 `
