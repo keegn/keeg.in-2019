@@ -12,6 +12,12 @@ interface InputData {
   message: string
 }
 
+const encode = data => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
+
 const ChatWidget: React.FC<Props> = () => {
   const [openLauncher, setOpenLauncher] = useToggle(false)
   const [openForm, setOpenForm] = useToggle(false)
@@ -22,14 +28,6 @@ const ChatWidget: React.FC<Props> = () => {
     message: '',
   })
   const [successMessage, setSuccessMessage] = useState(false)
-
-  const encode = data => {
-    const formData = new FormData()
-    Object.keys(data).forEach(k => {
-      formData.append(k, data[k])
-    })
-    return formData
-  }
 
   const handleChange = e => {
     const { name, value } = e.target
@@ -44,37 +42,51 @@ const ChatWidget: React.FC<Props> = () => {
   }, [successMessage])
 
   const handleSubmit = e => {
-    const data = { 'form-name': 'contact', ...inputData }
     setIsLoading(true)
+
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode(data),
+      body: encode({
+        'form-name': 'contact',
+        name: inputData.name,
+        email: inputData.email,
+        message: inputData.message,
+      }),
     })
-      .then(() => {
-        alert('Success!')
-        setOpenForm(false)
-        setSuccessMessage(true)
+      .then(res => {
+        if (res.ok) {
+          alert('Success!')
+          setOpenForm(false)
+          setSuccessMessage(true)
+        } else {
+          throw Error(
+            `Something went wrong and your message was not sent! 🤯 ${res.status} ${res.message}`,
+          )
+        }
       })
       .catch(error => alert(error))
 
     e.preventDefault()
   }
   console.log(inputData)
-
   return (
     <>
       <ChatLauncher onClick={setOpenLauncher}>icon</ChatLauncher>
       {openLauncher && (
         <ChatConsole>
           <Container>
-            <Header>hello</Header>
+            <Header>
+              <ChatHeroText>Hi there 👋</ChatHeroText>
+            </Header>
             <Body>
               <BodyContainer>
                 <BodyCard hasOffset>
                   <BodyCardHeader>
-                    <h2>Need help to say hello?</h2>
-                    <p>Reach out any time.</p>
+                    <P>Need help to say hello?</P>
+                    <P small gray>
+                      Reach out any time.
+                    </P>
                   </BodyCardHeader>
                   <BodyCardBody>
                     <p>avatar here</p>
@@ -91,47 +103,20 @@ const ChatWidget: React.FC<Props> = () => {
                         )}
                       </>
                     ) : (
-                      <ContactForm
-                        name="contact"
-                        method="post"
-                        action="/thanks"
-                        data-netlify="true"
-                        data-netlify-honeypot="bot-field"
-                      >
-                        <input type="hidden" name="bot-field" />
-                        <StyledInput
-                          marginBottom
-                          type="text"
-                          placeholder="Your Name"
-                          name="name"
-                          id="name"
-                          required
-                        />
-                        <StyledInput
-                          marginBottom
-                          type="email"
-                          placeholder="Your Email"
-                          name="email"
-                          id="email"
-                          required
-                        />
-                        <StyledTextArea
-                          marginBottom
-                          placeholder="Your Message"
-                          name="message"
-                          id="message"
-                          required
-                        />
-                        <button type="submit">Send Message</button>
-                      </ContactForm>
-                      // {/* <form onSubmit={handleSubmit} name="contact" netlify>
+                      // <ContactForm
+                      //   name="contact"
+                      //   method="post"
+                      //   action="/thanks"
+                      //   data-netlify="true"
+                      //   data-netlify-honeypot="bot-field"
+                      // >
+                      //   <input type="hidden" name="bot-field" />
                       //   <StyledInput
                       //     marginBottom
                       //     type="text"
                       //     placeholder="Your Name"
                       //     name="name"
-                      //     onChange={handleChange}
-                      //     value={inputData.name}
+                      //     id="name"
                       //     required
                       //   />
                       //   <StyledInput
@@ -139,20 +124,53 @@ const ChatWidget: React.FC<Props> = () => {
                       //     type="email"
                       //     placeholder="Your Email"
                       //     name="email"
-                      //     onChange={handleChange}
-                      //     value={inputData.email}
+                      //     id="email"
                       //     required
                       //   />
                       //   <StyledTextArea
                       //     marginBottom
                       //     placeholder="Your Message"
                       //     name="message"
-                      //     onChange={handleChange}
-                      //     value={inputData.message}
+                      //     id="message"
                       //     required
                       //   />
                       //   <button type="submit">Send Message</button>
-                      // </form> */}
+                      // </ContactForm>
+                      <form
+                        onSubmit={handleSubmit}
+                        data-netlify="true"
+                        name="contact"
+                        method="post"
+                      >
+                        <input type="hidden" name="form-name" value="contact" />
+                        <StyledInput
+                          marginBottom
+                          type="text"
+                          placeholder="Your Name"
+                          name="name"
+                          onChange={handleChange}
+                          value={inputData.name}
+                          required
+                        />
+                        <StyledInput
+                          marginBottom
+                          type="email"
+                          placeholder="Your Email"
+                          name="email"
+                          onChange={handleChange}
+                          value={inputData.email}
+                          required
+                        />
+                        <StyledTextArea
+                          marginBottom
+                          placeholder="Your Message"
+                          name="message"
+                          onChange={handleChange}
+                          value={inputData.message}
+                          required
+                        />
+                        <button type="submit">Send Message</button>
+                      </form>
                     )}
                   </BodyCardFooter>
                 </BodyCard>
@@ -198,7 +216,7 @@ const ChatConsole = styled.div`
   position: fixed;
   width: 380px;
   height: 75vh;
-  max-height: 500px;
+  max-height: 400px;
   bottom: 6rem;
   right: 16px;
   z-index: 320;
@@ -221,7 +239,21 @@ const Header = styled.div`
   position: relative;
   background: #141419;
   color: white;
-  padding: 48px 48px 64px;
+  padding: 48px 32px 64px;
+`
+
+const ChatHeroText = styled.h3`
+  padding: 16px 0 8px 0;
+  font-family: ${props => props.theme.font.headlineExtra};
+`
+
+const P = styled.p<{ small?: boolean; gray?: boolean }>`
+  font-family: ${props => props.theme.font.paragraphLight};
+  hyphens: none;
+  margin: 0;
+  padding: 0 0 8px 0;
+  font-size: ${props => props.small && '14px'};
+  color: ${props => props.gray && '#8e8e8e'};
 `
 
 const Body = styled.div`
