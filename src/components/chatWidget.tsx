@@ -39,7 +39,7 @@ const ChatWidget: React.FC<Props> = () => {
       file(sourceInstanceName: { eq: "images" }, name: { eq: "chatbubble" }) {
         childImageSharp {
           fixed(width: 24, height: 26) {
-            ...GatsbyImageSharpFixed_tracedSVG
+            ...GatsbyImageSharpFixed
           }
         }
       }
@@ -104,7 +104,7 @@ const ChatWidget: React.FC<Props> = () => {
           <Container>
             <Header>
               <Avatar />
-              <ChatHeroText>Hi there 👋</ChatHeroText>
+              <ChatHeroText>Hi there ✌️ </ChatHeroText>
             </Header>
             <Body>
               <BodyContainer>
@@ -204,16 +204,17 @@ const ChatWidget: React.FC<Props> = () => {
                   <BodyCardHeader>
                     <P>Credits</P>
                     <P small gray>
-                      This custom chat widget you are viewing was heavily
-                      inspired by the good folks at Dekks.app. This site was
-                      built from scratch using Gatsby, React, and Typescript.
+                      This custom chat widget you are viewing was built from
+                      scratch and heavily inspired by the good folks at
+                      Dekks.app. This site was built using Gatsby, React, and
+                      Typescript.
                     </P>
                     <P small gray>
                       For styling, I reached for styled-components. The
-                      typefaces used are Syne and Inter.
+                      typefaces are Syne and Inter.
                     </P>
                     <P small gray>
-                      The site is open source on Github. It relies on Netlify
+                      This site is open source on Github. It relies on Netlify
                       for continuous deployment and Sentry.io for error
                       monitoring.
                     </P>
@@ -305,8 +306,8 @@ const P = styled.p<{ small?: boolean; gray?: boolean }>`
   font-family: ${props => props.theme.font.paragraphLight};
   hyphens: none;
   margin: 0;
-  padding: 0 0 16px 0;
-  font-size: ${props => props.small && '14px'};
+  padding: ${props => (props.small ? '0 0 16px 0' : '0 0 8px 0')};
+  font-size: ${props => (props.small ? '14px' : '18px')};
   color: ${props => props.gray && '#8e8e8e'};
   line-height: 1.5;
 `
