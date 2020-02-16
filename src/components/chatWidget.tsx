@@ -5,6 +5,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
 import Avatar from './avatar'
+import { X } from 'react-feather'
 
 interface Props {
   onClick?: () => void
@@ -92,8 +93,11 @@ const ChatWidget: React.FC<Props> = () => {
   return (
     <>
       <ChatLauncher onClick={setOpenLauncher}>
-        {' '}
-        <Img fixed={data.file.childImageSharp.fixed} />
+        {openLauncher ? (
+          <X size={32} />
+        ) : (
+          <Img fixed={data.file.childImageSharp.fixed} />
+        )}
       </ChatLauncher>
       {openLauncher && (
         <ChatConsole>
@@ -200,16 +204,18 @@ const ChatWidget: React.FC<Props> = () => {
                   <BodyCardHeader>
                     <P>Credits</P>
                     <P small gray>
-                      Custom chat widget inspired by Dekks.app
+                      This custom chat widget you are viewing was heavily
+                      inspired by the good folks at Dekks.app. This site was
+                      built from scratch using Gatsby, React, and Typescript.
                     </P>
                     <P small gray>
-                      Made with Gatsby, React, and Typescript.
+                      For styling, I reached for styled-components. The
+                      typefaces used are Syne and Inter.
                     </P>
                     <P small gray>
-                      Styled Components
-                    </P>
-                    <P small gray>
-                      Type set in Syne and Inter
+                      The site is open source on Github. It relies on Netlify
+                      for continuous deployment and Sentry.io for error
+                      monitoring.
                     </P>
                   </BodyCardHeader>
                   <BodyCardBody></BodyCardBody>
@@ -254,7 +260,7 @@ const ChatLauncher = styled.div`
 
 const ChatConsole = styled.div`
   position: fixed;
-  width: 380px;
+  width: 90vw;
   height: 75vh;
   max-height: 430px;
   bottom: 6rem;
@@ -264,6 +270,9 @@ const ChatConsole = styled.div`
   font-size: 0.9375rem;
   box-shadow: 0 32px 64px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  @media (min-width: ${props => props.theme.screen.xs}) {
+    width: 380px;
+  }
 `
 
 const Container = styled.div`
@@ -296,9 +305,10 @@ const P = styled.p<{ small?: boolean; gray?: boolean }>`
   font-family: ${props => props.theme.font.paragraphLight};
   hyphens: none;
   margin: 0;
-  padding: 0 0 8px 0;
+  padding: 0 0 16px 0;
   font-size: ${props => props.small && '14px'};
   color: ${props => props.gray && '#8e8e8e'};
+  line-height: 1.5;
 `
 
 const Body = styled.div`
