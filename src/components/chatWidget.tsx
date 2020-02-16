@@ -115,20 +115,56 @@ const ChatWidget: React.FC<Props> = () => {
                         )}
                       </>
                     ) : (
-                      // <ContactForm
+                      <form
+                        name="contact"
+                        method="post"
+                        action="/thanks"
+                        data-netlify="true"
+                        data-netlify-honeypot="bot-field"
+                      >
+                        <input type="hidden" name="bot-field" />
+                        <input type="hidden" name="form-name" value="contact" />
+                        <input
+                          marginBottom
+                          type="text"
+                          placeholder="Your Name"
+                          name="name"
+                          id="name"
+                          required
+                        />
+                        <input
+                          marginBottom
+                          type="email"
+                          placeholder="Your Email"
+                          name="email"
+                          id="email"
+                          required
+                        />
+                        <textarea
+                          marginBottom
+                          placeholder="Your Message"
+                          name="message"
+                          id="message"
+                          required
+                        />
+                        <button type="submit">Send Message</button>
+                      </form>
+                      // <form
                       //   name="contact"
                       //   method="post"
-                      //   action="/thanks"
+                      //   onSubmit={handleSubmit}
                       //   data-netlify="true"
                       //   data-netlify-honeypot="bot-field"
                       // >
+                      //   <input type="hidden" name="form-name" value="contact" />
                       //   <input type="hidden" name="bot-field" />
                       //   <StyledInput
                       //     marginBottom
                       //     type="text"
                       //     placeholder="Your Name"
                       //     name="name"
-                      //     id="name"
+                      //     onChange={handleChange}
+                      //     value={inputData.name}
                       //     required
                       //   />
                       //   <StyledInput
@@ -136,56 +172,21 @@ const ChatWidget: React.FC<Props> = () => {
                       //     type="email"
                       //     placeholder="Your Email"
                       //     name="email"
-                      //     id="email"
+                      //     onChange={handleChange}
+                      //     value={inputData.email}
                       //     required
                       //   />
                       //   <StyledTextArea
                       //     marginBottom
                       //     placeholder="Your Message"
+                      //     type="textarea"
                       //     name="message"
-                      //     id="message"
+                      //     onChange={handleChange}
+                      //     value={inputData.message}
                       //     required
                       //   />
-                      //   <button type="submit">Send Message</button>
-                      // </ContactForm>
-                      <form
-                        name="contact"
-                        method="post"
-                        onSubmit={handleSubmit}
-                        data-netlify="true"
-                        data-netlify-honeypot="bot-field"
-                      >
-                        <input type="hidden" name="form-name" value="contact" />
-                        <input type="hidden" name="bot-field" />
-                        <StyledInput
-                          marginBottom
-                          type="text"
-                          placeholder="Your Name"
-                          name="name"
-                          onChange={handleChange}
-                          value={inputData.name}
-                          required
-                        />
-                        <StyledInput
-                          marginBottom
-                          type="email"
-                          placeholder="Your Email"
-                          name="email"
-                          onChange={handleChange}
-                          value={inputData.email}
-                          required
-                        />
-                        <StyledTextArea
-                          marginBottom
-                          placeholder="Your Message"
-                          type="textarea"
-                          name="message"
-                          onChange={handleChange}
-                          value={inputData.message}
-                          required
-                        />
-                        <StyledButton type="submit">Send Message</StyledButton>
-                      </form>
+                      //   <StyledButton type="submit">Send Message</StyledButton>
+                      // </form>
                     )}
                   </BodyCardFooter>
                 </BodyCard>

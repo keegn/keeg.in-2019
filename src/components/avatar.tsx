@@ -12,7 +12,7 @@ const Avatar: React.FC = () => {
       ) {
         childImageSharp {
           fixed(width: 44, height: 44) {
-            ...GatsbyImageSharpFixed_tracedSVG
+            ...GatsbyImageSharpFixed
           }
         }
       }
