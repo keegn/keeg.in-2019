@@ -17,7 +17,7 @@ interface InputData {
   message: string
 }
 
-const encode = data => {
+function encode(data) {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
     .join('&')
@@ -60,15 +60,14 @@ const ChatWidget: React.FC<Props> = () => {
 
   const handleSubmit = e => {
     setIsLoading(true)
-
+    e.preventDefault()
+    const form = e.target
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({
-        'form-name': 'contact',
-        name: inputData.name,
-        email: inputData.email,
-        message: inputData.message,
+        'form-name': form.getAttribute('name'),
+        ...inputData,
       }),
     })
       .then(res => {
@@ -162,12 +161,14 @@ const ChatWidget: React.FC<Props> = () => {
                       //   <button type="submit">Send Message</button>
                       // </ContactForm>
                       <form
-                        onSubmit={handleSubmit}
-                        data-netlify="true"
                         name="contact"
                         method="post"
+                        onSubmit={handleSubmit}
+                        data-netlify="true"
+                        data-netlify-honeypot="bot-field"
                       >
                         <input type="hidden" name="form-name" value="contact" />
+                        <input type="hidden" name="bot-field" />
                         <StyledInput
                           marginBottom
                           type="text"
