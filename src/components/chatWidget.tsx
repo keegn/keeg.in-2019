@@ -10,7 +10,7 @@ const ChatWidget: React.FC<Props> = () => {
   const [openLauncher, setOpenLauncher] = useToggle(false)
   const [openForm, setOpenForm] = useToggle(false)
 
-  const handleForm = e => e.preventDefault()
+  // const handleForm = e => e.preventDefault()
 
   return (
     <>
@@ -41,7 +41,6 @@ const ChatWidget: React.FC<Props> = () => {
                         data-netlify-honeypot="bot-field"
                         data-netlify="true"
                         action="/thanks"
-                        onSubmit={handleForm}
                       >
                         <input type="hidden" name="bot-field" />
                         <input
