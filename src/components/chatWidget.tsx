@@ -53,7 +53,6 @@ const ChatWidget: React.FC<Props> = () => {
                           type="text"
                           placeholder="Your Name"
                           name="name"
-                          id="name"
                           required
                         />
                         <StyledInput
@@ -61,14 +60,12 @@ const ChatWidget: React.FC<Props> = () => {
                           type="email"
                           placeholder="Your Email"
                           name="email"
-                          id="email"
                           required
                         />
                         <StyledTextArea
                           marginBottom
                           placeholder="Your Message"
                           name="message"
-                          id="message"
                           required
                         />
                         <button type="submit">Send Message</button>
