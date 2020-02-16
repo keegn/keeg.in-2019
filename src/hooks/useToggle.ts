@@ -5,7 +5,9 @@ const useToggle = (defaultOnValue?: boolean) => {
   const [isToggledOn, setIsToggledOn] = useState(defaultOnValue)
 
   // create any functions we need for modifying the state - toggle function
-  const toggle = (): void => setIsToggledOn(prevState => !prevState)
+  const toggle = (): void => {
+    return setIsToggledOn(prevState => !prevState)
+  }
 
   // return whatever we want another component to have access to (isToggledOn, toggle)
   // whenever we use useToggle() in a component, we can call the value and function below whatever

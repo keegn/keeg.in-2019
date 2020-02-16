@@ -9,7 +9,7 @@ import Avatar from './avatar'
 import { X } from 'react-feather'
 
 interface Props {
-  onClick?: () => void
+  onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void
 }
 
 interface InputData {
@@ -47,7 +47,7 @@ const ChatWidget: React.FC<Props> = () => {
     }
   `)
 
-  const handleChange = e => {
+  const handleChange = (e: { target: { name: any; value: any } }) => {
     const { name, value } = e.target
     setInputData(prevInputData => ({ ...prevInputData, [name]: value }))
   }
@@ -59,7 +59,7 @@ const ChatWidget: React.FC<Props> = () => {
     return () => clearTimeout(timer)
   }, [successMessage])
 
-  const handleSubmit = e => {
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     setIsLoading(true)
     e.preventDefault()
     fetch('/', {
@@ -77,7 +77,7 @@ const ChatWidget: React.FC<Props> = () => {
       })
       .catch(error => alert(error))
   }
-  console.log(inputData)
+
   return (
     <>
       <ChatLauncher onClick={setOpenLauncher}>
@@ -108,7 +108,7 @@ const ChatWidget: React.FC<Props> = () => {
                     {!openForm ? (
                       <>
                         {successMessage ? (
-                          <p>Thank you for your message.</p>
+                          <p>🙏 Thank you for your message.</p>
                         ) : (
                           <StyledButton onClick={setOpenForm}>
                             Start a conversation
