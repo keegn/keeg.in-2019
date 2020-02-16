@@ -22,11 +22,40 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Portfolio" />
       <ChatWidget />
-      <HiddenForm name="contact" netlify netlify-honeypot="bot-field" hidden>
-        <input type="text" name="name" />
-        <input type="email" name="email" />
-        <textarea name="message"></textarea>
-      </HiddenForm>
+      <form
+        name="contact"
+        method="post"
+        action="/thanks"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="bot-field" />
+        <input type="hidden" name="form-name" value="contact" />
+        <input
+          marginBottom
+          type="text"
+          placeholder="Your Name"
+          name="name"
+          id="name"
+          required
+        />
+        <input
+          marginBottom
+          type="email"
+          placeholder="Your Email"
+          name="email"
+          id="email"
+          required
+        />
+        <textarea
+          marginBottom
+          placeholder="Your Message"
+          name="message"
+          id="message"
+          required
+        />
+        <button type="submit">Send Message</button>
+      </form>
       <HeroText
         custom={0}
         initial={{
@@ -105,10 +134,6 @@ const IndexPage = () => {
     </Layout>
   )
 }
-
-const HiddenForm = styled.form`
-  display: none;
-`
 
 const HeroText = styled(motion.h1)`
   padding: 60px 0 8px 0;
