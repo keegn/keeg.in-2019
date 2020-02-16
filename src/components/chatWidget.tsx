@@ -91,40 +91,45 @@ const ChatWidget: React.FC<Props> = () => {
                         )}
                       </>
                     ) : (
-                      // <ContactForm
-                      //   name="contact-keegan"
-                      //   method="post"
-                      //   data-netlify-honeypot="bot-field"
-                      //   data-netlify="true"
-                      //   action="/thanks"
-                      // >
-                      //   <input type="hidden" name="bot-field" />
-                      //   <input
-                      //     type="hidden"
-                      //     name="form-name"
-                      //     value="contact-keegan"
-                      //   />
-                      //   <StyledInput
-                      //     marginBottom
-                      //     type="text"
-                      //     placeholder="Your Name"
-                      //     name="name"
-                      //     required
-                      //   />
-                      //   <StyledInput
-                      //     marginBottom
-                      //     type="email"
-                      //     placeholder="Your Email"
-                      //     name="email"
-                      //     required
-                      //   />
-                      //   <StyledTextArea
-                      //     marginBottom
-                      //     placeholder="Your Message"
-                      //     name="message"
-                      //     required
-                      //   />
-                      <form onSubmit={handleSubmit} name="contact" netlify>
+                      <ContactForm
+                      name="contact"
+                      method="post"
+                      action="/thanks"
+                      data-netlify="true"
+                      data-netlify-honeypot="bot-field"
+                      >
+                        <input type="hidden" name="bot-field" />
+                        {/* <input
+                          type="hidden"
+                          name="form-name"
+                          value="contact"
+                        /> */}
+                        <StyledInput
+                          marginBottom
+                          type="text"
+                          placeholder="Your Name"
+                          name="name"
+                          id="name"
+                          required
+                        />
+                        <StyledInput
+                          marginBottom
+                          type="email"
+                          placeholder="Your Email"
+                          name="email"
+                          id="email"
+                          required
+                        />
+                        <StyledTextArea
+                          marginBottom
+                          placeholder="Your Message"
+                          name="message"
+                          id="message"
+                          required
+                        />
+                        <button type="submit">Send Message</button>
+                        </ContactForm>
+                      {/* <form onSubmit={handleSubmit} name="contact" netlify>
                         <StyledInput
                           marginBottom
                           type="text"
@@ -152,7 +157,7 @@ const ChatWidget: React.FC<Props> = () => {
                           required
                         />
                         <button type="submit">Send Message</button>
-                      </form>
+                      </form> */}
                     )}
                   </BodyCardFooter>
                 </BodyCard>
