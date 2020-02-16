@@ -124,11 +124,7 @@ const ChatWidget: React.FC<Props> = () => {
                       //     name="message"
                       //     required
                       //   />
-                      <ContactForm
-                        onSubmit={handleSubmit}
-                        name="contact"
-                        netlify
-                      >
+                      <form onSubmit={handleSubmit} name="contact" netlify>
                         <StyledInput
                           marginBottom
                           type="text"
@@ -156,7 +152,7 @@ const ChatWidget: React.FC<Props> = () => {
                           required
                         />
                         <button type="submit">Send Message</button>
-                      </ContactForm>
+                      </form>
                     )}
                   </BodyCardFooter>
                 </BodyCard>
