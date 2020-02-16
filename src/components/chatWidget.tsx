@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import useToggle from '../hooks/useToggle'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
-import '../styles/hacks.css'
 
 import Avatar from './avatar'
 import { X } from 'react-feather'
@@ -148,9 +147,7 @@ const ChatWidget: React.FC<Props> = () => {
                           value={inputData.message}
                           required
                         />
-                        <button className="submit-button" type="submit">
-                          Send Message
-                        </button>
+                        <StyledButton type="submit">Send Message</StyledButton>
                       </form>
                     )}
                   </BodyCardFooter>
