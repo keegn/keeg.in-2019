@@ -48,7 +48,7 @@ const ChatWidget: React.FC<Props> = () => {
     setIsLoading(true)
     fetch('/', {
       method: 'POST',
-      // headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode(data),
     })
       .then(() => {
