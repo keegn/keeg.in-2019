@@ -124,7 +124,11 @@ const ChatWidget: React.FC<Props> = () => {
                       //     name="message"
                       //     required
                       //   />
-                      <ContactForm onSubmit={handleSubmit} name="contact">
+                      <ContactForm
+                        onSubmit={handleSubmit}
+                        name="contact"
+                        netlify
+                      >
                         <StyledInput
                           marginBottom
                           type="text"
