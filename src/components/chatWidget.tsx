@@ -2,12 +2,6 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import useToggle from '../hooks/useToggle'
 
-const encode = data => {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&')
-}
-
 interface Props {
   onClick?: () => void
 }
@@ -29,6 +23,14 @@ const ChatWidget: React.FC<Props> = () => {
   })
   const [successMessage, setSuccessMessage] = useState(false)
 
+  const encode = data => {
+    const formData = new FormData()
+    Object.keys(data).forEach(k => {
+      formData.append(k, data[k])
+    })
+    return formData
+  }
+
   const handleChange = e => {
     const { name, value } = e.target
     setInputData(prevInputData => ({ ...prevInputData, [name]: value }))
@@ -42,11 +44,12 @@ const ChatWidget: React.FC<Props> = () => {
   }, [successMessage])
 
   const handleSubmit = e => {
+    const data = { 'form-name': 'contact', ...inputData }
     setIsLoading(true)
     fetch('/', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', ...inputData }),
+      // headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode(data),
     })
       .then(() => {
         alert('Success!')
@@ -121,21 +124,14 @@ const ChatWidget: React.FC<Props> = () => {
                       //     name="message"
                       //     required
                       //   />
-                      <ContactForm
-                        onSubmit={handleSubmit}
-                        name="contact"
-                        data-netlify-honeypot="bot-field"
-                        data-netlify="true"
-                        netlify
-                      >
-                        <input type="hidden" name="bot-field" />
-                        <input type="hidden" name="form-name" value="contact" />
+                      <ContactForm onSubmit={handleSubmit} name="contact">
                         <StyledInput
                           marginBottom
                           type="text"
                           placeholder="Your Name"
                           name="name"
                           onChange={handleChange}
+                          value={inputData.name}
                           required
                         />
                         <StyledInput
@@ -144,6 +140,7 @@ const ChatWidget: React.FC<Props> = () => {
                           placeholder="Your Email"
                           name="email"
                           onChange={handleChange}
+                          value={inputData.email}
                           required
                         />
                         <StyledTextArea
@@ -151,6 +148,7 @@ const ChatWidget: React.FC<Props> = () => {
                           placeholder="Your Message"
                           name="message"
                           onChange={handleChange}
+                          value={inputData.message}
                           required
                         />
                         <button type="submit">Send Message</button>
