@@ -68,7 +68,7 @@ const ChatWidget: React.FC<Props> = () => {
                           id="message"
                           required
                         />
-                        <button>Send Message</button>
+                        <button type="submit">Send Message</button>
                       </ContactForm>
                     )}
                   </BodyCardFooter>
