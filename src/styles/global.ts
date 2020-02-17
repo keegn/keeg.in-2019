@@ -57,11 +57,12 @@ input {
   transition: all 0.2s ease;
   outline: none;
   margin-bottom: 16px;
+}
 
 textarea {
   display: block;
   width: 100%;
-  height: 2.25rem;
+  height: 4rem;
   padding: 8px;
   font-size: 14px;
   font-family: ${props => props.theme.font?.paragraphLight};

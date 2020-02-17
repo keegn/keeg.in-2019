@@ -107,10 +107,10 @@ const ChatWidget: React.FC<Props> = () => {
                     {!openForm ? (
                       <>
                         {successMessage ? (
-                          <p>🙏 Thank you for your message.</p>
+                          <P>🙏 Thank you for your message.</P>
                         ) : (
                           <StyledButton onClick={setOpenForm}>
-                            Start a conversation
+                            Send a message
                           </StyledButton>
                         )}
                       </>
@@ -140,7 +140,7 @@ const ChatWidget: React.FC<Props> = () => {
                           value={inputData.email}
                           required
                         />
-                        <input
+                        <textarea
                           placeholder="Your Message"
                           name="message"
                           onChange={handleChange}
@@ -156,19 +156,17 @@ const ChatWidget: React.FC<Props> = () => {
                   <BodyCardHeader>
                     <P>Credits</P>
                     <P small gray>
-                      This custom chat widget you are viewing was built from
-                      scratch and heavily inspired by the good folks at
-                      Dekks.app. This site was built using Gatsby, React, and
-                      Typescript.
+                      This site is open source on Github. It was built using
+                      Gatsby, React, and Typescript. It relies on Netlify for
+                      continuous deployment and Sentry.io for error monitoring.
                     </P>
                     <P small gray>
                       For styling, I reached for styled-components. The
                       typefaces are Syne and Inter.
                     </P>
                     <P small gray>
-                      This site is open source on Github. It relies on Netlify
-                      for continuous deployment and Sentry.io for error
-                      monitoring.
+                      This custom chat widget you are viewing was built from
+                      scratch and was inspired by the good folks at Dekks.app.
                     </P>
                   </BodyCardHeader>
                   <BodyCardBody></BodyCardBody>
@@ -215,7 +213,7 @@ const ChatConsole = styled.div`
   position: fixed;
   width: 90vw;
   height: 75vh;
-  max-height: 430px;
+  max-height: 480px;
   bottom: 6rem;
   right: 16px;
   z-index: 320;
