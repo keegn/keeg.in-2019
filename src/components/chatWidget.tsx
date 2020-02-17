@@ -140,7 +140,7 @@ const ChatWidget: React.FC<Props> = () => {
                           value={inputData.email}
                           required
                         />
-                        <input
+                        <textarea
                           placeholder="Your Message"
                           name="message"
                           onChange={handleChange}
