@@ -44,7 +44,7 @@ const ChatWidget: React.FC<Props> = () => {
         y: {
           type: 'spring',
           stiffness: 300,
-          damping: 11,
+          damping: 30,
         },
       },
       opacity: 1,
