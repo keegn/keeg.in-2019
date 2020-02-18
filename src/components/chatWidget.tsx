@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import useToggle from '../hooks/useToggle'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
+import { motion, useAnimation } from 'framer-motion'
 
 import Avatar from './avatar'
 import { X } from 'react-feather'
@@ -33,6 +34,23 @@ const ChatWidget: React.FC<Props> = () => {
     message: '',
   })
   const [successMessage, setSuccessMessage] = useState(false)
+  const controls = useAnimation()
+
+  useEffect(() => {
+    controls.start(i => ({
+      transition: {
+        delay: i === 0 ? 0 : i * 0.01,
+        duration: 0.1,
+        y: {
+          type: 'spring',
+          stiffness: 300,
+          damping: 11,
+        },
+      },
+      opacity: 1,
+      y: 0,
+    }))
+  }, [openLauncher])
 
   const data = useStaticQuery(graphql`
     query {
@@ -87,7 +105,14 @@ const ChatWidget: React.FC<Props> = () => {
         )}
       </ChatLauncher>
       {openLauncher && (
-        <ChatConsole>
+        <ChatConsole
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
+          custom={0}
+          animate={controls}
+        >
           <Container>
             <Header>
               <Avatar />
@@ -183,7 +208,7 @@ const ChatWidget: React.FC<Props> = () => {
 
 export default ChatWidget
 
-const ChatLauncher = styled.div`
+const ChatLauncher = styled(motion.div)`
   position: fixed;
   bottom: 1rem;
   right: 1rem;
@@ -209,7 +234,7 @@ const ChatLauncher = styled.div`
   transition: all 0.3s ease;
 `
 
-const ChatConsole = styled.div`
+const ChatConsole = styled(motion.div)`
   position: fixed;
   width: 90vw;
   height: 75vh;
@@ -293,7 +318,7 @@ const BodyCardBody = styled.div``
 
 const BodyCardFooter = styled.div``
 
-const StyledButton = styled.button`
+const StyledButton = styled(motion.button)`
   padding: 0 12px;
   height: 2.25rem;
   border-radius: 6px;
