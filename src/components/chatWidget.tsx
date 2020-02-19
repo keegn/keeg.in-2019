@@ -88,7 +88,6 @@ const ChatWidget: React.FC<Props> = () => {
       }),
     })
       .then(res => {
-        console.log('Form response: ', res)
         setOpenForm(false)
         setSuccessMessage(true)
       })
@@ -97,7 +96,15 @@ const ChatWidget: React.FC<Props> = () => {
 
   return (
     <>
-      <ChatLauncher onClick={setOpenLauncher}>
+      <ChatLauncher
+        onClick={setOpenLauncher}
+        initial={{ y: 100 }}
+        animate={{ y: 0 }}
+        transition={{
+          duration: 0.001,
+          delay: 1,
+        }}
+      >
         {openLauncher ? (
           <X size={32} />
         ) : (
@@ -140,40 +147,58 @@ const ChatWidget: React.FC<Props> = () => {
                         )}
                       </>
                     ) : (
-                      <form
-                        name="contact"
-                        method="post"
-                        onSubmit={handleSubmit}
-                        data-netlify="true"
-                        data-netlify-honeypot="bot-field"
+                      <AnimatedFormContainer
+                        initial={{ y: -5 }}
+                        animate={{ y: 0 }}
+                        transition={{
+                          y: {
+                            type: 'spring',
+                            stiffness: 400,
+                            damping: 10,
+                          },
+                        }}
                       >
-                        <input type="hidden" name="form-name" value="contact" />
-                        <input type="hidden" name="bot-field" />
-                        <input
-                          type="text"
-                          placeholder="Your Name"
-                          name="name"
-                          onChange={handleChange}
-                          value={inputData.name}
-                          required
-                        />
-                        <input
-                          type="email"
-                          placeholder="Your Email"
-                          name="email"
-                          onChange={handleChange}
-                          value={inputData.email}
-                          required
-                        />
-                        <textarea
-                          placeholder="Your Message"
-                          name="message"
-                          onChange={handleChange}
-                          value={inputData.message}
-                          required
-                        />
-                        <StyledButton type="submit">Send Message</StyledButton>
-                      </form>
+                        <form
+                          name="contact"
+                          method="post"
+                          onSubmit={handleSubmit}
+                          data-netlify="true"
+                          data-netlify-honeypot="bot-field"
+                        >
+                          <input
+                            type="hidden"
+                            name="form-name"
+                            value="contact"
+                          />
+                          <input type="hidden" name="bot-field" />
+                          <input
+                            type="text"
+                            placeholder="Your Name"
+                            name="name"
+                            onChange={handleChange}
+                            value={inputData.name}
+                            required
+                          />
+                          <input
+                            type="email"
+                            placeholder="Your Email"
+                            name="email"
+                            onChange={handleChange}
+                            value={inputData.email}
+                            required
+                          />
+                          <textarea
+                            placeholder="Your Message"
+                            name="message"
+                            onChange={handleChange}
+                            value={inputData.message}
+                            required
+                          />
+                          <StyledButton type="submit">
+                            {isLoading ? <Spinner /> : 'Send Message'}
+                          </StyledButton>
+                        </form>
+                      </AnimatedFormContainer>
                     )}
                   </BodyCardFooter>
                 </BodyCard>
@@ -317,6 +342,8 @@ const BodyCardHeader = styled.div``
 const BodyCardBody = styled.div``
 
 const BodyCardFooter = styled.div``
+
+const AnimatedFormContainer = styled(motion.div)``
 
 const StyledButton = styled(motion.button)`
   padding: 0 12px;
