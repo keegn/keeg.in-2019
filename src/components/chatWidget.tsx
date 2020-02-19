@@ -189,7 +189,7 @@ const ChatWidget: React.FC<Props> = () => {
                     <P>Credits</P>
                     <P small gray>
                       This site is open source on Github. It was built using
-                      Gatsby, React, and Typescript. It relies on Netlify for
+                      Gatsby, React, and TypeScript. It relies on Netlify for
                       continuous deployment and Sentry.io for error monitoring.
                     </P>
                     <P small gray>
