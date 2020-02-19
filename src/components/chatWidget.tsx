@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import useToggle from '../hooks/useToggle'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
+import { motion, useAnimation } from 'framer-motion'
 
 import Avatar from './avatar'
 import { X } from 'react-feather'
@@ -33,6 +34,23 @@ const ChatWidget: React.FC<Props> = () => {
     message: '',
   })
   const [successMessage, setSuccessMessage] = useState(false)
+  const controls = useAnimation()
+
+  useEffect(() => {
+    controls.start(i => ({
+      transition: {
+        delay: i === 0 ? 0 : i * 0.01,
+        duration: 0.1,
+        y: {
+          type: 'spring',
+          stiffness: 300,
+          damping: 30,
+        },
+      },
+      opacity: 1,
+      y: 0,
+    }))
+  }, [openLauncher])
 
   const data = useStaticQuery(graphql`
     query {
@@ -70,7 +88,6 @@ const ChatWidget: React.FC<Props> = () => {
       }),
     })
       .then(res => {
-        console.log('Form response: ', res)
         setOpenForm(false)
         setSuccessMessage(true)
       })
@@ -79,7 +96,15 @@ const ChatWidget: React.FC<Props> = () => {
 
   return (
     <>
-      <ChatLauncher onClick={setOpenLauncher}>
+      <ChatLauncher
+        onClick={setOpenLauncher}
+        initial={{ y: 100 }}
+        animate={{ y: 0 }}
+        transition={{
+          duration: 0.001,
+          delay: 1,
+        }}
+      >
         {openLauncher ? (
           <X size={32} />
         ) : (
@@ -87,7 +112,14 @@ const ChatWidget: React.FC<Props> = () => {
         )}
       </ChatLauncher>
       {openLauncher && (
-        <ChatConsole>
+        <ChatConsole
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
+          custom={0}
+          animate={controls}
+        >
           <Container>
             <Header>
               <Avatar />
@@ -183,7 +215,7 @@ const ChatWidget: React.FC<Props> = () => {
 
 export default ChatWidget
 
-const ChatLauncher = styled.div`
+const ChatLauncher = styled(motion.div)`
   position: fixed;
   bottom: 1rem;
   right: 1rem;
@@ -196,20 +228,20 @@ const ChatLauncher = styled.div`
   transform-origin: center center;
   backface-visibility: hidden;
   border-radius: 50%;
-  /* background-color: #444444; */
-  background: linear-gradient(238.72deg, #0044a9 0%, #f700a3 100%),
+  background-color: #444444;
+  /* background: linear-gradient(238.72deg, #0044a9 0%, #f700a3 100%),
     radial-gradient(100% 188.01% at 76.14% 0%, #43ddff 0%, #ff0000 100%),
     linear-gradient(0deg, #db00ff 0%, #14ff00 100%),
     radial-gradient(59.2% 100% at 50% 100%, #6a00d5 0%, #00e0ff 100%),
     radial-gradient(100% 148.07% at 0% 0%, #ff9900 0%, #001aff 100%);
-  background-blend-mode: hard-light, overlay, color-burn, color-burn, normal;
+  background-blend-mode: hard-light, overlay, color-burn, color-burn, normal; */
   color: white;
   z-index: 720;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
 `
 
-const ChatConsole = styled.div`
+const ChatConsole = styled(motion.div)`
   position: fixed;
   width: 90vw;
   height: 75vh;
@@ -293,7 +325,7 @@ const BodyCardBody = styled.div``
 
 const BodyCardFooter = styled.div``
 
-const StyledButton = styled.button`
+const StyledButton = styled(motion.button)`
   padding: 0 12px;
   height: 2.25rem;
   border-radius: 6px;

@@ -8,6 +8,7 @@ import Img from 'gatsby-image'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import ChatWidget from '../components/chatWidget'
 
 const NotFoundPage = () => {
   const controls = useAnimation()
@@ -30,9 +31,11 @@ const NotFoundPage = () => {
       y: 0,
     }))
   }, [])
+
   return (
     <Layout>
       <SEO title="404: Not found" />
+      <ChatWidget />
       <StyledImage fluid={data.file.childImageSharp.fluid} />
       <HeroText
         custom={0}
