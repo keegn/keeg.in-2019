@@ -120,7 +120,12 @@ const ChatWidget: React.FC<Props> = () => {
         ) : (
           <motion.div
             animate={{ scale: 1, rotate: 0 }}
-            transition={{ duration: 0.2 }}
+            transition={{
+              type: 'spring',
+              stiffness: 260,
+              damping: 20,
+              duration: 0.2,
+            }}
             style={{ display: 'flex', alignItems: 'center' }}
           >
             <Img fixed={data.file.childImageSharp.fixed} />
