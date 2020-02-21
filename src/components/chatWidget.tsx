@@ -102,13 +102,34 @@ const ChatWidget: React.FC<Props> = () => {
         animate={{ y: 0 }}
         transition={{
           duration: 0.001,
-          delay: 1,
+          delay: 0.8,
         }}
       >
         {openLauncher ? (
-          <X size={32} />
+          <motion.div
+            animate={{ rotate: 90, scale: 1 }}
+            transition={{
+              type: 'spring',
+              stiffness: 260,
+              damping: 20,
+            }}
+            style={{ display: 'flex', alignItems: 'center' }}
+          >
+            <X size={30} />
+          </motion.div>
         ) : (
-          <Img fixed={data.file.childImageSharp.fixed} />
+          <motion.div
+            animate={{ scale: 1, rotate: 0 }}
+            transition={{
+              type: 'spring',
+              stiffness: 260,
+              damping: 20,
+              duration: 0.2,
+            }}
+            style={{ display: 'flex', alignItems: 'center' }}
+          >
+            <Img fixed={data.file.childImageSharp.fixed} />
+          </motion.div>
         )}
       </ChatLauncher>
       {openLauncher && (
@@ -189,7 +210,7 @@ const ChatWidget: React.FC<Props> = () => {
                     <P>Credits</P>
                     <P small gray>
                       This site is open source on Github. It was built using
-                      Gatsby, React, and Typescript. It relies on Netlify for
+                      Gatsby, React, and TypeScript. It relies on Netlify for
                       continuous deployment and Sentry.io for error monitoring.
                     </P>
                     <P small gray>
@@ -239,6 +260,9 @@ const ChatLauncher = styled(motion.div)`
   z-index: 720;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
+  &:hover {
+    background-color: #555555;
+  }
 `
 
 const ChatConsole = styled(motion.div)`
