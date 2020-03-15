@@ -88,6 +88,7 @@ const ChatWidget: React.FC<Props> = () => {
       }),
     })
       .then(res => {
+        console.log('form res ', res)
         setOpenForm(false)
         setSuccessMessage(true)
       })
