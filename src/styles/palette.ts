@@ -10,6 +10,6 @@ export const palette: Palette = {
   lightShades: `#ffffff`,
   lightAccent: `#eeeeee`,
   mainBrand: `palevioletred`,
-  darkShades: `#000000`,
+  darkShades: `#151515`,
   darkAccent: `#333333`,
 }
