@@ -201,7 +201,16 @@ const ChatWidget: React.FC<Props> = () => {
                           value={inputData.message}
                           required
                         />
-                        <StyledButton type="submit">Send Message</StyledButton>
+                        <StyledButton
+                          grayed={
+                            !inputData.email ||
+                            !inputData.message ||
+                            !inputData.name
+                          }
+                          type="submit"
+                        >
+                          Send Message
+                        </StyledButton>
                       </form>
                     )}
                   </BodyCardFooter>
@@ -250,7 +259,7 @@ const ChatLauncher = styled(motion.div)`
   transform-origin: center center;
   backface-visibility: hidden;
   border-radius: 50%;
-  background-color: #2dbdfc;
+  background-color: #0b5054;
   /* background: linear-gradient(238.72deg, #0044a9 0%, #f700a3 100%),
     radial-gradient(100% 188.01% at 76.14% 0%, #43ddff 0%, #ff0000 100%),
     linear-gradient(0deg, #db00ff 0%, #14ff00 100%),
@@ -262,7 +271,7 @@ const ChatLauncher = styled(motion.div)`
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
   &:hover {
-    background-color: #0090d0;
+    background-color: #093f42;
   }
 `
 
@@ -294,7 +303,7 @@ const Container = styled.div`
 
 const Header = styled.div`
   position: relative;
-  background: #2b2b2b;
+  background: #0b5054;
   /* background: linear-gradient(238.72deg, #0044a9 0%, #f700a3 100%),
     radial-gradient(100% 188.01% at 76.14% 0%, #43ddff 0%, #ff0000 100%),
     linear-gradient(0deg, #db00ff 0%, #14ff00 100%),
@@ -359,7 +368,7 @@ const StyledButton = styled(motion.button)`
   hyphens: none;
   margin: 0;
   font-size: 14px;
-  background-color: #2dbdfc;
+  background-color: ${props => (props.grayed ? '#8e8e8e' : '#0b5054')};
   border: 1px solid transparent;
   color: white;
 `
