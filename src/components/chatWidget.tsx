@@ -250,7 +250,7 @@ const ChatLauncher = styled(motion.div)`
   transform-origin: center center;
   backface-visibility: hidden;
   border-radius: 50%;
-  background-color: #444444;
+  background-color: #2dbdfc;
   /* background: linear-gradient(238.72deg, #0044a9 0%, #f700a3 100%),
     radial-gradient(100% 188.01% at 76.14% 0%, #43ddff 0%, #ff0000 100%),
     linear-gradient(0deg, #db00ff 0%, #14ff00 100%),
@@ -262,7 +262,7 @@ const ChatLauncher = styled(motion.div)`
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
   &:hover {
-    background-color: #555555;
+    background-color: #0090d0;
   }
 `
 
@@ -294,12 +294,13 @@ const Container = styled.div`
 
 const Header = styled.div`
   position: relative;
-  background: linear-gradient(238.72deg, #0044a9 0%, #f700a3 100%),
+  background: #2b2b2b;
+  /* background: linear-gradient(238.72deg, #0044a9 0%, #f700a3 100%),
     radial-gradient(100% 188.01% at 76.14% 0%, #43ddff 0%, #ff0000 100%),
     linear-gradient(0deg, #db00ff 0%, #14ff00 100%),
     radial-gradient(59.2% 100% at 50% 100%, #6a00d5 0%, #00e0ff 100%),
-    radial-gradient(100% 148.07% at 0% 0%, #ff9900 0%, #001aff 100%);
-  background-blend-mode: hard-light, overlay, color-burn, color-burn, normal;
+    radial-gradient(100% 148.07% at 0% 0%, #ff9900 0%, #001aff 100%); */
+  /* background-blend-mode: hard-light, overlay, color-burn, color-burn, normal; */
   color: white;
   padding: 32px 32px 64px;
 `
@@ -358,7 +359,7 @@ const StyledButton = styled(motion.button)`
   hyphens: none;
   margin: 0;
   font-size: 14px;
-  background-color: #555555;
+  background-color: #2dbdfc;
   border: 1px solid transparent;
   color: white;
 `
