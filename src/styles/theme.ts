@@ -56,7 +56,7 @@ export const lightTheme: ThemeInterface = {
     lineColor: palette.darkAccent,
   },
 }
-console.log('Light Theme: ', lightTheme)
+// console.log('Light Theme: ', lightTheme)
 
 export const darkTheme: ThemeInterface = {
   ...baseTheme,
@@ -68,7 +68,7 @@ export const darkTheme: ThemeInterface = {
     lineColor: palette.lightAccent,
   },
 }
-console.log('Dark Theme ', darkTheme)
+// console.log('Dark Theme ', darkTheme)
 
 export const Theme = (darkMode: boolean): ThemeInterface =>
   darkMode ? { ...darkTheme } : { ...lightTheme }
