@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { motion, useAnimation } from 'framer-motion'
 
 import Layout from '../components/layout'
+import ChatWidget from '../components/chatWidget'
 
 import SEO from '../components/seo'
 
@@ -20,8 +21,10 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Portfolio" />
+      <ChatWidget />
       <HeroText
-        custom={0}
+        // custom={0}
+        custom={1}
         initial={{
           opacity: 0,
           y: 16,
@@ -52,13 +55,14 @@ const IndexPage = () => {
       >
         I spend most of my day building mobile and web applications with React,
         React Native, and TypeScript. When I'm not creating software you can
-        find me cycling roads less traveled on my gravel bike.
+        find me cycling back roads on my gravel bike.
       </P>
       <LinksContainer>
         <SocialLink
           target="blank"
           href="https://github.com/keegn"
-          custom={2}
+          // custom={2}
+          custom={1}
           initial={{
             opacity: 0,
             y: 24,
@@ -71,7 +75,8 @@ const IndexPage = () => {
         <SocialLink
           target="blank"
           href="https://dribbble.com/keegin"
-          custom={3}
+          // custom={3}
+          custom={1}
           initial={{
             opacity: 0,
             y: 24,
@@ -84,7 +89,8 @@ const IndexPage = () => {
         <SocialLink
           target="blank"
           href="https://linkedin.com/in/keeganburkett"
-          custom={4}
+          // custom={4}
+          custom={1}
           initial={{
             opacity: 0,
             y: 24,

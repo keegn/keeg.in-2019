@@ -8,9 +8,8 @@ import Img from 'gatsby-image'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import ChatWidget from '../components/chatWidget'
 
-const NotFoundPage = () => {
+const Thanks = () => {
   const controls = useAnimation()
   const data = useStaticQuery(graphql`
     query {
@@ -31,11 +30,9 @@ const NotFoundPage = () => {
       y: 0,
     }))
   }, [])
-
   return (
     <Layout>
       <SEO title="404: Not found" />
-      <ChatWidget />
       <StyledImage fluid={data.file.childImageSharp.fluid} />
       <HeroText
         custom={0}
@@ -45,7 +42,7 @@ const NotFoundPage = () => {
         }}
         animate={controls}
       >
-        Page Not Found
+        Thank You
       </HeroText>
       <P
         custom={0}
@@ -55,7 +52,7 @@ const NotFoundPage = () => {
         }}
         animate={controls}
       >
-        Oops! The page you are looking for has been removed or relocated.
+        Your form submission has been received.
       </P>
       <MotionLink
         to="/"
@@ -73,7 +70,7 @@ const NotFoundPage = () => {
   )
 }
 
-export default NotFoundPage
+export default Thanks
 
 const StyledImage = styled(Img)`
   margin-top: 48px;

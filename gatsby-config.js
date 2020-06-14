@@ -52,5 +52,6 @@ module.exports = {
         icon: `src/images/keegin-sq-icon.png`,
       },
     },
+    `gatsby-plugin-offline`,
   ],
 }
