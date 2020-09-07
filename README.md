@@ -7,7 +7,3 @@
 <h4 align="center">
   👋 Welcome to the source code of my personal site - https://keeg.in/
 </h4>
-<hr />
-<h4 align="center">
-  🏗 Under Construction
-</h4>
