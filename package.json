@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "Keeg.in",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "The personal site of Keegan Burkett",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Keegan Burkett <keegan.t.burkett@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.6",
     "framer-motion": "^1.7.2",
