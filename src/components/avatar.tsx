@@ -22,6 +22,7 @@ const Avatar: React.FC = () => {
   return (
     <AvatarImg>
       <StyledImage fixed={data.file.childImageSharp.fixed} />
+      <Online />
     </AvatarImg>
   )
 }
@@ -31,10 +32,23 @@ export default Avatar
 const StyledImage = styled(Img)`
   width: 44px;
   height: 44px;
-  border-radius: 22px;
+  border-radius: 8px;
+`
+
+const Online = styled.div`
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  border: 3px solid #0b5054;
+  background-color: #13ffa7;
+  bottom: 0px;
+  right: -4px;
+  z-index: 1000;
 `
 const AvatarImg = styled.span`
   margin-left: auto;
   transform: rotateZ(-90deg);
-  z-index: 100;
+  z-index: 1;
+  position: relative;
 `
