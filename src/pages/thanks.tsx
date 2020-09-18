@@ -32,7 +32,7 @@ const Thanks = () => {
   }, [])
   return (
     <Layout>
-      <SEO title="404: Not found" />
+      <SEO title="Form submission" />
       <StyledImage fluid={data.file.childImageSharp.fluid} />
       <HeroText
         custom={0}

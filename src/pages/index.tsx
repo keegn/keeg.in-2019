@@ -20,7 +20,7 @@ const IndexPage = () => {
   }, [])
   return (
     <Layout>
-      <SEO title="Portfolio" />
+      <SEO title="Personal Site" />
       <ChatWidget />
       <HeroText
         // custom={0}
