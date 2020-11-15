@@ -7,3 +7,5 @@
 <h4 align="center">
   👋 Welcome to the source code of my personal site - https://keeg.in/
 </h4>
+<hr />
+<img src="src/images/screenshot.png?raw=true" alt="Keeg.in Full Screen Image"/>
