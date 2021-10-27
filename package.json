@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Keegan Burkett <keegan.t.burkett@gmail.com>",
   "dependencies": {
+    "@splitbee/web": "^0.3.0",
     "babel-plugin-styled-components": "^1.10.6",
     "framer-motion": "^1.7.2",
     "gatsby": "^2.18.4",
