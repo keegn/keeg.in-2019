@@ -26,6 +26,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-splitbee`,
+      options: {
+        includeInDevelopment: false,
+        delayTimeout: 0,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
