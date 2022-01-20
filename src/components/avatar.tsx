@@ -40,7 +40,7 @@ const Online = styled.div`
   width: 16px;
   height: 16px;
   border-radius: 8px;
-  border: 3px solid #43033f;
+  border: 3px solid #83735e;
   background-color: #13ffa7;
   bottom: 0px;
   right: -4px;
