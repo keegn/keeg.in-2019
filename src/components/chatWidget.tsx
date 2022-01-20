@@ -366,7 +366,7 @@ const StyledButton = styled(motion.button)`
   margin: 0;
   border-radius: none;
   font-size: 14px;
-  background-color: ${props => (props.grayed ? '#8e8e8e' : '#151515')};
+  background-color: ${props => (props.grayed ? '#8e8e8e' : '#d3009d')};
   border: 1px solid transparent;
   color: white;
   cursor: pointer;
