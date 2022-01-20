@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { motion, useAnimation } from 'framer-motion'
 import splitbee from '@splitbee/web'
 
-// This initiliazes Splitbee.js
+// Initialize Splitbee.js
 splitbee.init()
 
 import Layout from '../components/layout'
@@ -27,7 +27,6 @@ const IndexPage = () => {
       <SEO title="Personal Site" />
       <ChatWidget />
       <HeroText
-        // custom={0}
         custom={1}
         initial={{
           opacity: 0,
@@ -65,7 +64,6 @@ const IndexPage = () => {
         <SocialLink
           target="blank"
           href="https://github.com/keegn"
-          // custom={2}
           custom={1}
           initial={{
             opacity: 0,
@@ -79,7 +77,6 @@ const IndexPage = () => {
         <SocialLink
           target="blank"
           href="https://dribbble.com/keegin"
-          // custom={3}
           custom={1}
           initial={{
             opacity: 0,
@@ -93,7 +90,6 @@ const IndexPage = () => {
         <SocialLink
           target="blank"
           href="https://linkedin.com/in/keeganburkett"
-          // custom={4}
           custom={1}
           initial={{
             opacity: 0,
@@ -126,7 +122,7 @@ const LinksContainer = styled.div`
 `
 
 /* Alternative way to type a bunch of styled props
-interface SocialLinkProps {
+interface LinkProps {
   dotColor?: string
 }
 styled(motion.a)<LinkProps>

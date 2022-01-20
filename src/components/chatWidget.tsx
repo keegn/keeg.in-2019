@@ -27,7 +27,7 @@ function encode(data) {
 const ChatWidget: React.FC<Props> = () => {
   const [openLauncher, setOpenLauncher] = useToggle(false)
   const [openForm, setOpenForm] = useToggle(false)
-  const [isLoading, setIsLoading] = useState(false)
+  const [, setIsLoading] = useState(false)
   const [inputData, setInputData] = useState<InputData>({
     name: '',
     email: '',
@@ -259,13 +259,12 @@ const ChatLauncher = styled(motion.div)`
   transform-origin: center center;
   backface-visibility: hidden;
   border-radius: 50%;
-  background-color: #0b5054;
-  /* background: linear-gradient(238.72deg, #0044a9 0%, #f700a3 100%),
+  background: linear-gradient(275deg, #0044a9 0%, #f700a3 100%),
     radial-gradient(100% 188.01% at 76.14% 0%, #43ddff 0%, #ff0000 100%),
     linear-gradient(0deg, #db00ff 0%, #14ff00 100%),
     radial-gradient(59.2% 100% at 50% 100%, #6a00d5 0%, #00e0ff 100%),
     radial-gradient(100% 148.07% at 0% 0%, #ff9900 0%, #001aff 100%);
-  background-blend-mode: hard-light, overlay, color-burn, color-burn, normal; */
+  background-blend-mode: hard-light, overlay, color-burn, color-burn, normal;
   color: white;
   z-index: 720;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
@@ -303,13 +302,12 @@ const Container = styled.div`
 
 const Header = styled.div`
   position: relative;
-  background: #0b5054;
-  /* background: linear-gradient(238.72deg, #0044a9 0%, #f700a3 100%),
+  background: linear-gradient(238.72deg, #0044a9 0%, #f700a3 100%),
     radial-gradient(100% 188.01% at 76.14% 0%, #43ddff 0%, #ff0000 100%),
     linear-gradient(0deg, #db00ff 0%, #14ff00 100%),
     radial-gradient(59.2% 100% at 50% 100%, #6a00d5 0%, #00e0ff 100%),
-    radial-gradient(100% 148.07% at 0% 0%, #ff9900 0%, #001aff 100%); */
-  /* background-blend-mode: hard-light, overlay, color-burn, color-burn, normal; */
+    radial-gradient(100% 148.07% at 0% 0%, #ff9900 0%, #001aff 100%);
+  background-blend-mode: hard-light, overlay, color-burn, color-burn, normal;
   color: white;
   padding: 32px 32px 64px;
 `
@@ -363,12 +361,13 @@ const BodyCardFooter = styled.div``
 const StyledButton = styled(motion.button)`
   padding: 0 12px;
   height: 2.25rem;
-  border-radius: 6px;
   font-family: ${props => props.theme.font.paragraphLight};
   hyphens: none;
   margin: 0;
+  border-radius: none;
   font-size: 14px;
-  background-color: ${props => (props.grayed ? '#8e8e8e' : '#0b5054')};
+  background-color: ${props => (props.grayed ? '#8e8e8e' : '#151515')};
   border: 1px solid transparent;
   color: white;
+  cursor: pointer;
 `
