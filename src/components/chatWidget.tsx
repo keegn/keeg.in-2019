@@ -103,7 +103,7 @@ const ChatWidget: React.FC<Props> = () => {
         animate={{ y: 0 }}
         transition={{
           duration: 0.001,
-          delay: 0.8,
+          delay: 1.6,
         }}
       >
         {openLauncher ? (

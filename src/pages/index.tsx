@@ -64,7 +64,7 @@ const IndexPage = () => {
         <SocialLink
           target="blank"
           href="https://github.com/keegn"
-          custom={1}
+          custom={2}
           initial={{
             opacity: 0,
             y: 24,
@@ -77,7 +77,7 @@ const IndexPage = () => {
         <SocialLink
           target="blank"
           href="https://dribbble.com/keegin"
-          custom={1}
+          custom={3}
           initial={{
             opacity: 0,
             y: 24,
@@ -90,7 +90,7 @@ const IndexPage = () => {
         <SocialLink
           target="blank"
           href="https://linkedin.com/in/keeganburkett"
-          custom={1}
+          custom={4}
           initial={{
             opacity: 0,
             y: 24,
