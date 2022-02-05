@@ -57,10 +57,10 @@ const IndexPage = () => {
         animate={controls}
       >
         I spend most of my day designing and building web and mobile
-        applications with React, React Native, and TypeScript. When I'm not
-        creating software you can find me on the ski mountain or cycling back
-        roads on my gravel bike. I also enjoy working on side projects related
-        to blockchain, privacy-first, and real estate SaaS.
+        applications with Figma, React, React Native, and TypeScript. When I'm
+        not creating software you can find me on the ski mountain or cycling
+        back roads on my gravel bike. I also enjoy working on side projects
+        related to blockchain, privacy-first, and real estate SaaS.
       </P>
       <LinksContainer>
         <SocialLink
