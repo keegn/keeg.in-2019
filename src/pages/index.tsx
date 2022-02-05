@@ -44,9 +44,10 @@ const IndexPage = () => {
         }}
         animate={controls}
       >
-        Hey, I'm Keegan. I'm a front-end software engineer based in the Midwest.
-        My current role at Paytient focuses on building consumer software that
-        helps folks pay for medical expenses over time, interest free.
+        Hey, I'm Keegan. I'm a front-end software engineer and product designer
+        based in northern New Mexico. I'm currently building software @Paytient
+        that helps folks pay for medical expenses over time, interest free. I
+        also enjoy working on side projects related to blockchain and privacy.
       </P>
       <P
         custom={1}
@@ -56,9 +57,10 @@ const IndexPage = () => {
         }}
         animate={controls}
       >
-        I spend most of my day building mobile and web applications with React,
-        React Native, and TypeScript. When I'm not creating software you can
-        find me cycling back roads on my gravel bike.
+        I spend most of my day designing and building web and mobile
+        applications with React, React Native, and TypeScript. When I'm not
+        creating software you can find me on the ski mountain or cycling back
+        roads on my gravel bike.
       </P>
       <LinksContainer>
         <SocialLink
