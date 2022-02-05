@@ -102,6 +102,19 @@ const IndexPage = () => {
           <div />
           LinkedIn
         </SocialLink>
+        <SocialLink
+          target="blank"
+          href="https://twitter.com/keegnn"
+          custom={5}
+          initial={{
+            opacity: 0,
+            y: 24,
+          }}
+          animate={controls}
+        >
+          <div />
+          Twitter
+        </SocialLink>
       </LinksContainer>
     </Layout>
   )
