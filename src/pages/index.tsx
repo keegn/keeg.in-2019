@@ -44,7 +44,7 @@ const IndexPage = () => {
         }}
         animate={controls}
       >
-        Hey, I'm Keegan. I'm a front-end software engineer and product designer
+        Hey, I'm Keegan. I'm a frontend software engineer and product designer
         based in northern New Mexico. I'm currently building software @Paytient
         that helps folks pay for medical expenses over time, interest free. I
         also enjoy working on side projects related to blockchain and privacy.
