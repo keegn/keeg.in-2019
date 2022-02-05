@@ -46,8 +46,7 @@ const IndexPage = () => {
       >
         Hey, I'm Keegan. I'm a frontend software engineer and product designer
         based in northern New Mexico. I'm currently building software @Paytient
-        that helps folks pay for medical expenses over time, interest free. I
-        also enjoy working on side projects related to blockchain and privacy.
+        that helps folks pay for medical expenses over time, interest free.
       </P>
       <P
         custom={1}
@@ -60,7 +59,8 @@ const IndexPage = () => {
         I spend most of my day designing and building web and mobile
         applications with React, React Native, and TypeScript. When I'm not
         creating software you can find me on the ski mountain or cycling back
-        roads on my gravel bike.
+        roads on my gravel bike. I also enjoy working on side projects related
+        to blockchain, privacy-first, and real estate SaaS.
       </P>
       <LinksContainer>
         <SocialLink
