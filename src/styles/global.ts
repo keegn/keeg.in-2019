@@ -17,7 +17,8 @@ ${normalize};
   }
 
   a {
-    font-size: 18px;
+    font-size: font-size: ${props =>
+      props.theme.screen?.xs ? '16px' : '18px'};;
     text-decoration: none;
     font-weight: 300;
     color: ${props => props.theme.global.links};
