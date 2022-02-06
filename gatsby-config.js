@@ -46,20 +46,10 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `keeg`,
         start_url: `/`,
-        background_color: `linear-gradient(
-          rgb(204, 235, 205),
-          rgb(181, 199, 212),
-          rgb(155, 165, 219),
-          rgb(123, 131, 224),
-          rgb(79, 99, 228)
-        );`,
-        theme_color: `linear-gradient(
-          rgb(204, 235, 205),
-          rgb(181, 199, 212),
-          rgb(155, 165, 219),
-          rgb(123, 131, 224),
-          rgb(79, 99, 228)
-        );`,
+        background_color: `
+          rgb(79, 99, 228)`,
+        theme_color: `
+          rgb(79, 99, 228)`,
         display: `standalone`,
         icon: `src/images/keegin-icon.png`,
       },
