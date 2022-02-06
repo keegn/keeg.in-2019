@@ -17,10 +17,9 @@ ${normalize};
   }
 
   a {
-    font-size: font-size: ${props =>
-      props.theme.screen?.xs ? '16px' : '18px'};;
     text-decoration: none;
     font-weight: 300;
+    font-size: ${props => (props.theme.screen?.xs ? '16px' : '20px')};
     color: ${props => props.theme.global.links};
     :hover {
       color: ${props => props.theme.global.hoveredLinks};
@@ -37,7 +36,7 @@ ${normalize};
 
   p {
     line-height: 1.4;
-    font-size: ${props => (props.theme.screen?.xs ? '16px' : '18px')};;
+    font-size: ${props => (props.theme.screen?.xs ? '16px' : '18px')};
     margin-top: 24px;
     margin-bottom: 24px;
     font-weight: 300;
