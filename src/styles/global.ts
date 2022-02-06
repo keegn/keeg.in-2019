@@ -36,7 +36,7 @@ ${normalize};
 
   p {
     line-height: 1.4;
-    font-size: 18px;
+    font-size: ${props => (props.theme.screen?.xs ? '16px' : '18px')};;
     margin-top: 24px;
     margin-bottom: 24px;
     font-weight: 300;
