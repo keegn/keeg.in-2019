@@ -45,8 +45,8 @@ const IndexPage = () => {
         animate={controls}
       >
         Hey, I'm Keegan. I'm a frontend software engineer and product designer
-        based in northern New Mexico. I'm currently building software @Paytient
-        that helps folks pay for medical expenses over time, interest free.
+        based in Santa Fe, NM. I'm currently building software at Paytient that
+        helps folks pay for medical expenses over time, interest free.
       </P>
       <P
         custom={1}
@@ -56,11 +56,11 @@ const IndexPage = () => {
         }}
         animate={controls}
       >
-        I spend most of my day designing and building web and mobile
-        applications with Figma, React, React Native, and TypeScript. When I'm
-        not creating software you can find me on the ski mountain or cycling
-        back roads on my gravel bike. I also enjoy working on side projects
-        related to blockchain, privacy-first, and real estate SaaS.
+        Lately I've been designing and building web/mobile apps using Figma,
+        React, React Native, and TypeScript. In my free time you can find me on
+        the ski mountain or cycling back roads on my gravel bike. I also enjoy
+        working on side projects related to blockchain, privacy-first, and real
+        estate SaaS.
       </P>
       <LinksContainer>
         <SocialLink
