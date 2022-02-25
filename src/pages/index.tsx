@@ -59,8 +59,8 @@ const IndexPage = () => {
         Lately I've been designing and building web/mobile apps using Figma,
         React, React Native, and TypeScript. In my free time you can find me on
         the ski mountain or cycling back roads on my gravel bike. I also enjoy
-        working on side projects related to blockchain, privacy-first, and real
-        estate SaaS.
+        working on side projects related to web3, privacy-first, and real estate
+        SaaS.
       </P>
       <LinksContainer>
         <SocialLink
