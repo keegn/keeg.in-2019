@@ -4,8 +4,6 @@ import { Link } from 'gatsby'
 
 import DarkMode from '../components/DarkMode/darkMode'
 
-// import ToggleTheme from './toggleTheme'
-
 const Header: React.FC = () => (
   <Container>
     <HeaderContainer>
