@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import useToggle from '../hooks/useToggle'
 import { graphql, useStaticQuery } from 'gatsby'
@@ -12,28 +12,9 @@ interface Props {
   onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void
 }
 
-interface InputData {
-  name: string
-  email: string
-  message: string
-}
-
-function encode(data: any) {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&')
-}
-
 const ChatWidget: React.FC<Props> = () => {
   const [openLauncher, setOpenLauncher] = useToggle(false)
-  const [openForm, setOpenForm] = useToggle(false)
-  const [, setIsLoading] = useState(false)
-  const [inputData, setInputData] = useState<InputData>({
-    name: '',
-    email: '',
-    message: '',
-  })
-  const [successMessage, setSuccessMessage] = useState(false)
+
   const controls = useAnimation()
 
   useEffect(() => {
@@ -63,37 +44,6 @@ const ChatWidget: React.FC<Props> = () => {
       }
     }
   `)
-
-  const handleChange = (e: { target: { name: any; value: any } }) => {
-    const { name, value } = e.target
-    setInputData(prevInputData => ({ ...prevInputData, [name]: value }))
-  }
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setSuccessMessage(false)
-    }, 3000)
-    return () => clearTimeout(timer)
-  }, [successMessage])
-
-  const handleSubmit = (e: { preventDefault: () => void }) => {
-    setIsLoading(true)
-    e.preventDefault()
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({
-        'form-name': 'contact',
-        ...inputData,
-      }),
-    })
-      .then(res => {
-        console.log('form res ', res)
-        setOpenForm(false)
-        setSuccessMessage(true)
-      })
-      .catch(error => alert(error))
-  }
 
   return (
     <>
@@ -153,83 +103,26 @@ const ChatWidget: React.FC<Props> = () => {
                   <BodyCardHeader>
                     <P>Want to say hello?</P>
                     <P small gray>
-                      Reach out any time.
+                      Reach out any time. Send me a message via Dribbble,
+                      LinkedIn, or Twitter.
                     </P>
                   </BodyCardHeader>
-                  <BodyCardBody></BodyCardBody>
-                  <BodyCardFooter>
-                    {!openForm ? (
-                      <>
-                        {successMessage ? (
-                          <P>🙏 Thank you for your message.</P>
-                        ) : (
-                          <StyledButton onClick={setOpenForm}>
-                            Send a message
-                          </StyledButton>
-                        )}
-                      </>
-                    ) : (
-                      <form
-                        name="contact"
-                        method="post"
-                        onSubmit={handleSubmit}
-                        data-netlify="true"
-                        data-netlify-honeypot="bot-field"
-                      >
-                        <input type="hidden" name="form-name" value="contact" />
-                        <input type="hidden" name="bot-field" />
-                        <input
-                          type="text"
-                          placeholder="Your Name"
-                          name="name"
-                          onChange={handleChange}
-                          value={inputData.name}
-                          required
-                        />
-                        <input
-                          type="email"
-                          placeholder="Your Email"
-                          name="email"
-                          onChange={handleChange}
-                          value={inputData.email}
-                          required
-                        />
-                        <textarea
-                          placeholder="Your Message"
-                          name="message"
-                          onChange={handleChange}
-                          value={inputData.message}
-                          required
-                        />
-                        <StyledButton
-                          grayed={
-                            !inputData.email ||
-                            !inputData.message ||
-                            !inputData.name
-                          }
-                          type="submit"
-                        >
-                          Send Message
-                        </StyledButton>
-                      </form>
-                    )}
-                  </BodyCardFooter>
                 </BodyCard>
                 <BodyCard>
                   <BodyCardHeader>
                     <P>Credits</P>
                     <P small gray>
                       This site is open source on Github. It was built using
-                      Gatsby, React, and TypeScript. It relies on Netlify for
-                      continuous deployment and Sentry.io for error monitoring.
+                      Gatsby, React, and TypeScript. It uses Cloudflare Pages
+                      for continuous deployment from Github.
                     </P>
                     <P small gray>
-                      For styling, I reached for styled-components. The
-                      typefaces are Syne and Inter.
+                      For styling it uses styled-components. The typefaces are
+                      Syne and Inter.
                     </P>
                     <P small gray>
-                      This custom chat widget you are viewing was built from
-                      scratch and was inspired by the good folks at Dekks.app.
+                      This chat widget was built from scratch using Framer
+                      Motion.
                     </P>
                   </BodyCardHeader>
                   <BodyCardBody></BodyCardBody>
@@ -359,17 +252,3 @@ const BodyCardHeader = styled.div``
 const BodyCardBody = styled.div``
 
 const BodyCardFooter = styled.div``
-
-const StyledButton = styled(motion.button)`
-  padding: 0 12px;
-  height: 2.25rem;
-  font-family: ${props => props.theme.font.paragraphLight};
-  hyphens: none;
-  margin: 0;
-  border-radius: none;
-  font-size: 14px;
-  background-color: #fff;
-  border: 1px solid #e6e6e6;
-  color: #000;
-  cursor: pointer;
-`

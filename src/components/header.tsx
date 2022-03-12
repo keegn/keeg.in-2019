@@ -2,8 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
-import DarkMode from '../components/DarkMode/darkMode'
-
 const Header: React.FC = () => (
   <Container>
     <HeaderContainer>
@@ -14,7 +12,6 @@ const Header: React.FC = () => (
         <NavLink to="">
           <a href="mailto:keegan.t.burkett@gmail.com">Contact</a>
         </NavLink>
-        <DarkMode initial={'dark'} />
       </NavLinksContainer>
     </HeaderContainer>
     <Line />
