@@ -7,7 +7,7 @@
   "dependencies": {
     "@splitbee/web": "^0.3.0",
     "babel-plugin-styled-components": "^2.0.7",
-    "framer-motion": "^7.2.1",
+    "framer-motion": "3.10.6",
     "gatsby": "^4.22.0",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-manifest": "^4.22.0",
