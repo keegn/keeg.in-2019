@@ -16,7 +16,7 @@ const IndexPage = () => {
   const controls = useAnimation()
 
   useEffect(() => {
-    controls.start(i => ({
+    controls.start((i) => ({
       transition: { delay: i === 0 ? 0.2 : i * 0.3 },
       opacity: 1,
       y: 0,
@@ -45,7 +45,7 @@ const IndexPage = () => {
         animate={controls}
       >
         Hey, I'm Keegan. I'm a frontend software engineer and product designer
-        based in Santa Fe, NM. I'm currently building software at Paytient that
+        based in the midwest. I'm currently building software at Paytient that
         helps folks pay for medical expenses over time, interest free.
       </P>
       <P
@@ -57,10 +57,9 @@ const IndexPage = () => {
         animate={controls}
       >
         Lately I've been designing and building web/mobile apps using Figma,
-        React, React Native, and TypeScript. In my free time you can find me on
-        the ski mountain or cycling back roads on my gravel bike. I also enjoy
-        working on side projects related to web3, privacy-first, and real estate
-        SaaS.
+        React, React Native, and TypeScript. In my free time you can find me
+        cycling back roads on my gravel bike. I also enjoy working on side
+        projects related to privacy-first and proptech SaaS.
       </P>
       <LinksContainer>
         <SocialLink
@@ -122,11 +121,11 @@ const IndexPage = () => {
 
 const HeroText = styled(motion.h1)`
   padding: 60px 0 8px 0;
-  font-family: ${props => props.theme.font.headlineExtra};
+  font-family: ${(props) => props.theme.font.headlineExtra};
 `
 
 const P = styled(motion.p)`
-  font-family: ${props => props.theme.font.paragraphLight};
+  font-family: ${(props) => props.theme.font.paragraphLight};
   hyphens: none;
 `
 
@@ -144,17 +143,17 @@ styled(motion.a)<LinkProps>
 */
 const SocialLink = styled(motion.a)<{ dotColor?: string }>`
   padding-bottom: 16px;
-  font-family: ${props => props.theme.font.paragraphLight};
-  color: ${props => props.theme.palette.lightAccent};
+  font-family: ${(props) => props.theme.font.paragraphLight};
+  color: ${(props) => props.theme.palette.lightAccent};
   display: flex;
   align-items: center;
   div {
-    width: ${props => props.dotColor && '8px'};
-    height: ${props => props.dotColor && '8px'};
-    border-radius: ${props => props.dotColor && '16px'};
-    background-color: ${props => props.dotColor};
+    width: ${(props) => props.dotColor && '8px'};
+    height: ${(props) => props.dotColor && '8px'};
+    border-radius: ${(props) => props.dotColor && '16px'};
+    background-color: ${(props) => props.dotColor};
     display: inline-block;
-    margin: ${props => props.dotColor && '0 8px 0 0'};
+    margin: ${(props) => props.dotColor && '0 8px 0 0'};
   }
 `
 
