@@ -44,9 +44,9 @@ const IndexPage = () => {
         }}
         animate={controls}
       >
-        Hey, I'm Keegan. I'm a frontend software engineer and product designer
-        based in the midwest. I'm currently building software at Paytient that
-        helps folks pay for medical expenses over time, interest free.
+        Hey, I'm Keegan, a frontend software engineer and product designer. I'm
+        currently building software at Paytient that helps folks pay for medical
+        expenses over time, interest free.
       </P>
       <P
         custom={1}
