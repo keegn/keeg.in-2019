@@ -17,6 +17,12 @@ module.exports = {
     `gatsby-plugin-typescript`,
     `gatsby-plugin-styled-components`,
     {
+      resolve: `gatsby-plugin-plausible`,
+      options: {
+        domain: `keeg.in`,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
